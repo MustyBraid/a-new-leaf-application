@@ -5,17 +5,19 @@ import windowPane from '../assets/windowPane.png';
 
 const Footer = () => {
   return (
-<footer className="flex-row justify-center p-4 rounded-lg shadow-black shadow-2xl md:flex md:items-center md:justify-between md:p-6 bg-white rounded-tr-sm ">
+<footer className="flex-row justify-center p-4 rounded-lg shadow-black shadow-2xl  bg-white rounded-tr-sm ">
 
-<div className='flex flex-row'>
-          <img className='' src={gear} alt="" />
+<div className='flex justify-center items-center'>
+    <div className='flex space-x-52'>
+        
+    <img className='h-10 w-10 opacity-25' src={pottedPlant} alt="Potted plant footer" />
+
+    <img className='h-10 w-10 opacity-25' src={windowPane} alt="window pane footer" />
+
+        <img className='h-10 w-10 opacity-25' src={gear} alt="Gear Icon footer" />
+
+    </div>
 </div>
-
-    <img className='' src={pottedPlant} alt="" />
-
-    <img className='' src={windowPane} alt="" />
-    <br></br>
-
 </footer>
   )
 }
