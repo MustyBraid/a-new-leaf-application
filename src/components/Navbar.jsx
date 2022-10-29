@@ -17,7 +17,7 @@ const NavBar = () => {
           </a>
         </div>
         <div class="hidden md:flex items-center space-x-1">
-          <a href="" className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"> Signup </a>
+          <a href="/signIn" className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"> Signup </a>
           <img className="h-10 w-10 opacity-25 block" src={UserIcon} alt="" />
         </div>
       </div>
