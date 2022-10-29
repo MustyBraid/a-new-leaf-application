@@ -19,7 +19,10 @@ const userSchema = new Schema({
     required: true,
     minLength: 8,
   },
-  // add plants?
+  plants: {
+    type: Schema.Types.ObjectId,
+    ref: "Plant",
+  },
 });
 
 userSchema.pre("save", async function (next) {
