@@ -6,7 +6,7 @@ import UserIcon from '../assets/UserIcon.png';
 const NavBar = () => {
   return (
     
-<nav class="fixed w-full h-[80px] flex items-center px-4 bg-green-300 text-gray-300 rounded-b-3xl">
+<nav class="fixed w-full h-[80px] flex items-center px-4 bg-green-300 text-gray-300 rounded-b-3xl ">
   <div class="max-w-6xl mx-auto px-4">
     <div class="flex justify-between">
       <div class="flex space-x-7">
@@ -17,8 +17,6 @@ const NavBar = () => {
           </a>
         </div>
         <div class="hidden md:flex items-center space-x-1">
-          <a href="" className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"> Home </a>
-          <a href="" className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"> Contact Us </a>
           <a href="" className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"> Signup </a>
           <img className="h-10 w-10 opacity-25 block" src={UserIcon} alt="" />
         </div>
