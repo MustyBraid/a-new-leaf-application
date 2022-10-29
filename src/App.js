@@ -11,13 +11,13 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Footer />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/editplant" element={<Editor />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
