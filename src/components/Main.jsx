@@ -39,7 +39,7 @@ const Main = () => {
     <p className="my-4">Apollo</p>
    </div>
    <div className="shadow-md shadow-[#ccc9c4] hover:scale-110 duration-500 rounded-2xl">
-    <img className="w-20 mx-auto opacity-25" src={plusSign} alt="" />
+    <a href="/PopUpPage"><img className="w-20 mx-auto opacity-25 " src={plusSign} alt="" /></a>
     <p className="my-4">Apollo</p>
    </div>
   </div>

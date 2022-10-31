@@ -25,7 +25,7 @@ const SignUp = () => {
               <span className="far fa-envelope text-gray-500"></span>
             </div>
             <div className="flex-1">
-              <input type="text" placeholder="E-mail" className="h-10 py-1 pr-3 w-full"/>
+              <input type="text" placeholder="Email" className="h-10 py-1 pr-3 w-full"/>
             </div>
           </div>
 
@@ -40,13 +40,17 @@ const SignUp = () => {
 
 
           <div className="text-center mt-6 md:mt-12">
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white text-xl py-2 px-4 md:px-6 rounded-xl transition-colors duration-300">Sign Up <span className="far fa-paper-plane ml-2"></span></button>
+            <button className="bg-green-500 hover:bg-green-700
+            text-white text-xl py-2 px-4 md:px-6 rounded-xl 
+            transition-colors duration-300">Sign Up 
+            <span className="far fa-paper-plane ml-2"></span></button>
           </div>
 
         </div>
 
         <div className="border-t border-solid mt-6 md:mt-12 pt-4">
-          <p className="text-gray-500 text-center">Already have an account, <a href="#" className=" text-indigo-600 hover:underline">Sign In</a></p>
+          <p className="text-gray-500 text-center">Already have an account?
+           <a href="/Login" className=" text-green-700 hover:underline"> Sign In</a></p>
         </div>
 
       </div>
