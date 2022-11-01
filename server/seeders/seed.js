@@ -18,7 +18,7 @@ db.once("open", async () => {
 db.once("open", async () => {
   try {
     await Plant.deleteMany({});
-    await Plant.create(userSeeds);
+    await Plant.create(plantSeeds);
 
     console.log("all done!");
     process.exit(0);

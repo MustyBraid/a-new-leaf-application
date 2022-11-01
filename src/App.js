@@ -7,7 +7,6 @@ import Editor from "./components/Editor";
 import Signup from "./components/Signup";
 import { Routes, Route } from "react-router-dom";
 
-
 function App() {
   return (
     <div>
@@ -16,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/editPlant" element={<Editor />} />
-         <Route path="/signup" element={<Signup />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </div>
   );
