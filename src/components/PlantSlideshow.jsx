@@ -1,6 +1,7 @@
 import React, {useState}from 'react';
 import {PlantImages} from './PlantImages'
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
+import sunIcon from '../assets/sunIcon.png';
 //Import Plant card
 
 
@@ -53,7 +54,12 @@ const ImageSlider = () => {
    <div class="bg-gray-400 w-64 h-3 rounded-lg mt-2 overflow-hidden">
     <div class="bg-green-400 w-3/4 h-full rounded-lg shadow-md"></div>
    </div>
-   <div className="box-border p-5 pb-4 border-2 rounded-lg bg-white m4 mt-4">
+   <div className="box-border p-5 pb-6 border-2 rounded-lg bg-white m4 mt-4">
+   <div className='box-border p-5 pb-6 border-2 rounded-lg bg-white m4 mt-4 float-right '>
+    <h4 className='text-sm'>Light level</h4>
+    <img className='flex items-center justify-center' src={sunIcon} alt="" />
+    <div className="border-t border-solid mt-6 md:mt-12 pt-2"></div>
+   </div>
     <h3 className='text-sm text-left pb-2'>Watering</h3>
    </div>
    <div class="p-10">
@@ -61,7 +67,6 @@ const ImageSlider = () => {
 <div class="dropdown inline-block relative">
   <button class="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
     <span class="mr-1">Dropdown</span>
-    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
   </button>
   <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
     <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">One</a></li>
