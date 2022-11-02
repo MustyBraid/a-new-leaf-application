@@ -2,6 +2,7 @@ import React, {useState}from 'react';
 import {PlantImages} from './PlantImages'
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 import sunIcon from '../assets/sunIcon.png';
+import tempGauge from '../assets/tempGauge.png';
 //Import Plant card
 
 
@@ -55,12 +56,15 @@ const ImageSlider = () => {
     <div class="bg-green-400 w-3/4 h-full rounded-lg shadow-md"></div>
    </div>
    <div className="box-border p-5 pb-6 border-2 rounded-lg bg-white m4 mt-4">
-   <div className='box-border p-5 pb-6 border-2 rounded-lg bg-white m4 mt-4 float-right '>
+
+    <h3 className='text-sm text-left pb-2 text-zinc-300'>Watering <br className='text-lg text-zinc-300' />Let soil dry, mist until moist</h3>
+    <div className='box-border p-5 pb-6 border-2 rounded-lg bg-white m4 mt-4'>
     <h4 className='text-sm'>Light level</h4>
     <img className='flex items-center justify-center' src={sunIcon} alt="" />
     <div className="border-t border-solid mt-6 md:mt-12 pt-2"></div>
+    <h5 className='text-sm'>TEMP</h5>
+    <img className='w-10 h-10' src={tempGauge} alt="" />
    </div>
-    <h3 className='text-sm text-left pb-2'>Watering</h3>
    </div>
    <div class="p-10">
 
