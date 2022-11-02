@@ -38,13 +38,15 @@ function App() {
   return (
     <div>
       <ApolloProvider client={client}>
-        <Navbar />
-        <Footer />
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/editPlant" element={<Editor />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
+        <Router>
+          <Navbar />
+          <Footer />
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/editPlant" element={<Editor />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </Router>
       </ApolloProvider>
     </div>
   );
