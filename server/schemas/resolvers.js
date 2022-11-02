@@ -35,6 +35,27 @@ const resolvers = {
 
       return { token, profile };
     },
+    addPlant: async (parent, { userId, plant }, context) => {
+      if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: userId },
+          {
+            $addToSet: { plants: plant },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    removeUser: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOneAndDelete({ _id: context.user._id });
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 };
 
