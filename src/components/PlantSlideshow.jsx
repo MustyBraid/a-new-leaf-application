@@ -3,6 +3,7 @@ import {PlantImages} from './PlantImages'
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 import sunIcon from '../assets/sunIcon.png';
 import { showNotification, setupTimer,stopNotification,timeOptions } from './Notification';
+import SearchBar from './SearchBar';
 
 //Image Slider
 const ImageSlider = () => {
@@ -65,6 +66,8 @@ const ImageSlider = () => {
    <div class="p-10">
 
 <div class="dropdown inline-block relative">
+  <SearchBar placeholder={'Search for a plant!'}/>
+
   <button class="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
     <span class="mr-1">Water Timer</span>
   </button>

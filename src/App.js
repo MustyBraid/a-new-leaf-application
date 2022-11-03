@@ -6,9 +6,7 @@ import Navbar from "./components/Navbar";
 import Editor from "./components/Editor";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
-import PopUpPage from "./components/PopUpPage";
 import PlantSlideshow from "./components/PlantSlideshow";
-
 
 function App() {
   return (
@@ -19,7 +17,6 @@ function App() {
         <Route path="/editplant" element={<Editor />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/PopUpPage" element={<PopUpPage />} />
         <Route path="/PlantSlideshow" element={<PlantSlideshow />} />
       </Routes>
 
