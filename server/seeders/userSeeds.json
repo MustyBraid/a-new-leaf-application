@@ -3,5 +3,10 @@
         "name": "Cali Huddleston",
         "email": "calihuddleston@gmail.com",
         "password":  "cookiejar"
+    },
+    {
+        "name": "Logan Powell",
+        "email": "loganpowell@gmail.com",
+        "password": "cookiejar"
     }
 ]
