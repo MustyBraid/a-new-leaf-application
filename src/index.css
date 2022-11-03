@@ -16,4 +16,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     display: block;
   }
 
+  #prev-next-arrows {
+    z-index: 100!important;
+  }
+
+  img {  
+    z-index: 0!important;
+    user-drag: none;  
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+ }
   
