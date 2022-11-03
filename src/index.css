@@ -50,6 +50,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -ms-user-select: none;
 }
 
+.plant {
+  min-width: 60%;
+  transform: scale(1.35);
+}
   img {  
     z-index: 0!important;
     user-drag: none;  

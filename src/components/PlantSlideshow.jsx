@@ -25,21 +25,20 @@ const ImageSlider = () => {
     }
   
     return (
-        <div className="z-10 bg-gray-300 flex content-center	justify-center items-center " >
-        <section className='mt-32 slider items-center bg-white -p-44 rounded-lg rounded-t-3xl shadow-md bg-gradient-to-b from-stone-50 to-white'>
+        <div className="z-0 bg-gray-300 flex content-center	justify-center items-center p-2 px-8" >
+        <section className='mt-32 slider items-center bg-white pt-6 -p-56 rounded-b-xl rounded-t-xxl shadow-md bg-gradient-to-b from-stone-50 to-white'>
 
           {PlantImages.map((plant, index) => {
             return (              
               <div className={index === current ? 'plant active' : 'plant' } key={index} >
                 {index === current && (
-                  <img src={plant.image} alt='plant image' className='-m-900 flex w-full justify-self-center select-none image' />                  
+                  <img src={plant.image} alt='plant image' className='-m-1000 flex w-full justify-self-center select-none image' />                  
                 )}
               </div>              
             );
           })}
 
           {/* prev / next arrows */}
-
             <div id="prev-arrow" className='z-50 -mt-60 m-8 left-arrow float-left selectEnable '>
               <Icon icon="tabler:arrow-narrow-left"  height="2.5rem" width="2.5rem" className='left-arrow float-left' color='#D1D5DB' onClick={prevSlide}/>
             </div>
@@ -47,10 +46,11 @@ const ImageSlider = () => {
               <Icon icon="tabler:arrow-narrow-right" height="2.5rem" width="2.5rem" className='right-arrow float-right' color='#D1D5DB' onClick={nextSlide}/>
             </div>
 
-          {/* edit plant form */}
-          <div id="editForm" className='p-12'>     
 
-          {/* current age */}
+          {/* edit plant form */}
+          <div id="editForm" className='px-12 pb-12'>     
+
+            {/* current age */}
             <div class="whitespace-no-wrap">
             <label for="plantAge">
               <h1 className="font-bold text-zinc-400 text-sm pb-2 whitespace-no-wrap"><Icon icon="tabler:cake" inline={true} color="#9ca3af" />1.2 yrs</h1>            
