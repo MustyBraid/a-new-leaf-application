@@ -26,12 +26,12 @@ const ImageSlider = () => {
   
     return (
         <div className="bg-gray-300 flex justify-center items-center h-fit" >
-        <section className='-m-32 slider bg-white p-10 rounded-lg rounded-t-3xl shadow-md bg-gradient-to-b from-stone-50 to-white'>
+        <section className='slider bg-white p-10 rounded-lg rounded-t-3xl shadow-md bg-gradient-to-b from-stone-50 to-white'>
           {PlantImages.map((plant, index) => {
             return (              
               <div className={index === current ? 'plant active' : 'plant'} key={index} >
                 {index === current && (
-                  <img src={plant.image} alt='plant image' className='image' />                  
+                  <img src={plant.image} alt='plant image' className='-m-20 image' />                  
                 )}
               </div>              
             );
