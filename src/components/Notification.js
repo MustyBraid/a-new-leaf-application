@@ -1,3 +1,4 @@
+//Testing Notification. Will delete later
 // One Min: 60*1000, Day: 1000*60*60*24};
 
 let timer = null;
