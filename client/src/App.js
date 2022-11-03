@@ -11,7 +11,10 @@ import Footer from "./components/Footer";
 import Main from "./components/Main";
 import Navbar from "./components/Navbar";
 import Editor from "./components/Editor";
-import Signup from "./components/Signup";
+import SignUp from "./components/SignUp";
+import Login from "./components/Login";
+import PopUpPage from "./components/PopUpPage";
+import PlantSlideshow from "./components/PlantSlideshow";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -40,13 +43,16 @@ function App() {
       <ApolloProvider client={client}>
         <Router>
           <Navbar />
-          <Footer />
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/editPlant" element={<Editor />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/editplant" element={<Editor />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/PopUpPage" element={<PopUpPage />} />
+            <Route path="/PlantSlideshow" element={<PlantSlideshow />} />
           </Routes>
         </Router>
+        <Footer />
       </ApolloProvider>
     </div>
   );
