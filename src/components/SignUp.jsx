@@ -2,25 +2,61 @@ import React from 'react'
 
 const SignUp = () => {
   return (
-<body class="antialiased bg-gray-200 text-gray-900 font-sans">
-    <div class="flex items-center h-screen w-full">
-      <div class="w-full bg-white rounded shadow-lg p-8 m-4 md:max-w-sm md:mx-auto">
-      <span class="block w-full text-xl uppercase font-bold mb-4">Login</span>      
-        <form class="mb-4" action="/" method="post">
-          <div class="mb-4 md:w-full">
-            <label for="email" class="block text-xs mb-1">Username or Email</label>
-            <input class="w-full border rounded p-2 outline-none focus:shadow-outline" type="email" name="email" id="email" placeholder="Username or Email"/>
+<div className="signup-1 flex items-center relative h-screen">
+  <div className="overlay absolute inset-0 z-0 bg-black opacity-75"></div>
+  <div className="container px-4 mx-auto relative z-10">
+    <div className="sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-5/12 mx-auto">
+      <div className="box bg-white p-6 md:px-12 md:pt-12 border-t-10 border-solid border-indigo-600 rounded-2xl">
+        <h2 className="text-3xl text-gray-800 text-center">Create Your Account</h2>
+
+        <div className="signup-form mt-6 md:mt-12">
+
+          <div className="border-2 border-solid rounded flex items-center mb-4">
+            <div className="w-10 h-10 flex justify-center items-center flex-shrink-0">
+              <span className="far fa-user text-gray-500"></span>
+            </div>
+            <div className="flex-1">
+              <input type="text" placeholder="Username" className="h-10 py-1 pr-3 w-full"/>
+            </div>
           </div>
-          <div class="mb-6 md:w-full">
-            <label for="password" class="block text-xs mb-1">Password</label>
-            <input class="w-full border rounded p-2 outline-none focus:shadow-outline" type="password" name="password" id="password" placeholder="Password"/>
+
+          <div className="border-2 border-solid rounded flex items-center mb-4">
+            <div className="w-10 h-10 flex justify-center items-center flex-shrink-0">
+              <span className="far fa-envelope text-gray-500"></span>
+            </div>
+            <div className="flex-1">
+              <input type="text" placeholder="Email" className="h-10 py-1 pr-3 w-full"/>
+            </div>
           </div>
-          <button class="bg-green-500 hover:bg-green-700 text-white uppercase text-sm font-semibold px-4 py-2 rounded">Login</button>
-        </form>
-        <a class="text-blue-700 text-center text-sm" href="/login">Forgot password?</a>
+
+          <div className="border-2 border-solid rounded flex items-center mb-4">
+            <div className="w-10 h-10 flex justify-center items-center flex-shrink-0">
+              <span className="fas fa-asterisk text-gray-500"></span>
+            </div>
+            <div className="flex-1">
+              <input type="password" placeholder="Password" className="h-10 py-1 pr-3 w-full"/>
+            </div>
+          </div>
+
+
+          <div className="text-center mt-6 md:mt-12">
+            <button className="bg-green-500 hover:bg-green-700
+            text-white text-xl py-2 px-4 md:px-6 rounded-xl 
+            transition-colors duration-300">Sign Up 
+            <span className="far fa-paper-plane ml-2"></span></button>
+          </div>
+
+        </div>
+
+        <div className="border-t border-solid mt-6 md:mt-12 pt-4">
+          <p className="text-gray-500 text-center">Already have an account?
+           <a href="/Login" className=" text-green-700 hover:underline"> Sign In</a></p>
+        </div>
+
+      </div>
     </div>
   </div>
-</body>
+</div>
   )
 }
 
