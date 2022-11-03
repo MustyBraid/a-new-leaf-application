@@ -4,19 +4,31 @@ import Footer from "./components/Footer";
 import Main from "./components/Main";
 import Navbar from "./components/Navbar";
 import Editor from "./components/Editor";
-import Signup from "./components/Signup";
-import { Routes, Route } from "react-router-dom";
+import SignUp from "./components/SignUp";
+import Login from "./components/Login";
+import PopUpPage from "./components/PopUpPage";
+import PlantSlideshow from "./components/PlantSlideshow";
+
+
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Footer />
       <Routes>
         <Route path="/" element={<Main />} />
+<<<<<<< HEAD
         <Route path="/editPlant" element={<Editor />} />
         <Route path="/signup" element={<Signup />} />
+=======
+        <Route path="/editplant" element={<Editor />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/PopUpPage" element={<PopUpPage />} />
+        <Route path="/PlantSlideshow" element={<PlantSlideshow />} />
+>>>>>>> origin/billy_branch
       </Routes>
+      <Footer />
     </div>
   );
 }
