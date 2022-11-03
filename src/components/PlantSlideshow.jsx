@@ -25,38 +25,36 @@ const ImageSlider = () => {
     }
   
     return (
-        <div className="z-10 bg-gray-300 flex place-content-center content-center	 justify-center items-center " >
-        <section className='slider items-center bg-white -p-32 rounded-lg rounded-t-3xl shadow-md bg-gradient-to-b from-stone-50 to-white'>
+        <div className="z-10 bg-gray-300 flex content-center	justify-center items-center " >
+        <section className='mt-32 slider items-center bg-white -p-44 rounded-lg rounded-t-3xl shadow-md bg-gradient-to-b from-stone-50 to-white'>
 
-        
           {PlantImages.map((plant, index) => {
             return (              
               <div className={index === current ? 'plant active' : 'plant' } key={index} >
                 {index === current && (
-                  <img src={plant.image} alt='plant image' className='-m-810 mt-6 flex w-full justify-self-center select-none image' />                  
+                  <img src={plant.image} alt='plant image' className='-m-900 flex w-full justify-self-center select-none image' />                  
                 )}
               </div>              
             );
           })}
 
           {/* prev / next arrows */}
-          <div id='prev-next-arrows' class='-mt-52 h-3/6 z-50 selectEnable '>
-            <div id="prev-arrow" className='z-50 m-16 left-arrow float-left selectEnable '>
-              <Icon icon="tabler:arrow-narrow-left"  height="2.5rem" width="2.5rem" color='#D1D5DB' inline={true} onClick={prevSlide}/>
+
+            <div id="prev-arrow" className='z-50 -mt-60 m-8 left-arrow float-left selectEnable '>
+              <Icon icon="tabler:arrow-narrow-left"  height="2.5rem" width="2.5rem" className='left-arrow float-left' color='#D1D5DB' onClick={prevSlide}/>
             </div>
-            <div id="prev-arrow" className='z-50 m-16 right-arrow float-right selectEnable '>
-              <Icon icon="tabler:arrow-narrow-right" height="2.5rem" width="2.5rem" color='#D1D5DB' inline={true} onClick={nextSlide}/>
+            <div id="prev-arrow" className='z-50 -mt-60 m-8 right-arrow float-right selectEnable '>
+              <Icon icon="tabler:arrow-narrow-right" height="2.5rem" width="2.5rem" className='right-arrow float-right' color='#D1D5DB' onClick={nextSlide}/>
             </div>
-          </div>
 
           {/* edit plant form */}
-          <div id="editForm" className='p-12 mt-52'>     
+          <div id="editForm" className='p-12'>     
 
           {/* current age */}
             <div class="whitespace-no-wrap">
             <label for="plantAge">
-              <h1 class="font-bold text-zinc-400 text-sm pb-2 whitespace-no-wrap"><Icon icon="tabler:cake" inline={true} color="#9ca3af" />1.2 yrs</h1>            
-              <input class="placeholder:italic text-zinc-400 text-lg block bg-white w-30 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 invalid:border-red-500 focus:ring-1 " type="date" name="bday" required pattern="\d{4}-\d{2}-\d{2}">
+              <h1 className="font-bold text-zinc-400 text-sm pb-2 whitespace-no-wrap"><Icon icon="tabler:cake" inline={true} color="#9ca3af" />1.2 yrs</h1>            
+              <input className="placeholder:italic text-zinc-400 text-lg block bg-white w-30 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 invalid:border-red-500 focus:ring-1 " type="date" name="bday" required pattern="\d{4}-\d{2}-\d{2}">
               </input>
             </label>
             </div>
@@ -64,7 +62,7 @@ const ImageSlider = () => {
             {/* current name */}
             <label for="plantNSame">
               <p className='text-zinc-400 text-lg'>Hercules</p>
-              <input class="placeholder:italic placeholder:text-zinc-400 text-lg block bg-white w-30 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 invalid:border-red-500 focus:ring-1 " placeholder="Hercules" type="text" name="search"/>
+              <input className="placeholder:italic placeholder:text-zinc-400 text-lg block bg-white w-30 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 invalid:border-red-500 focus:ring-1 " placeholder="Hercules" type="text" name="search"/>
             </label>
     
 
