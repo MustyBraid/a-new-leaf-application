@@ -1,13 +1,15 @@
 import React, { Fragment } from 'react';
+import Search from '../assets/search.png'
 
-function SearchBar ({placeholder, data}) {
+function SearchBar ({placeholder}) {
     return (
-        <div className='searchBar'>
-            Thing
-            <div className='searchInputs'></div>
+        <div id='searchBar' className="flex felx-nowrap">
+            <div id='searchInputs' className=''></div>
                 <input type="text" placeholder={placeholder}/>
-                <div className='searchIcon'> </div>
-            <div className='searhcOutputs'></div>
+                <img id='searchIcon' src={Search} alt=''/>
+            <div id='searchOutputs'>
+                {/* http calls down here */}
+            </div>
         </div>
     )
 }

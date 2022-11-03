@@ -8,8 +8,6 @@ import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import PopUpPage from "./components/PopUpPage";
 
-
-
 function App() {
   return (
     <div>
