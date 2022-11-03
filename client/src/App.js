@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 import Main from "./components/Main";
 import Navbar from "./components/Navbar";
 import Editor from "./components/Editor";
-import SignUp from "./components/SignUp";
+import SignUp from "./components/Signup";
 import Login from "./components/Login";
 import PopUpPage from "./components/PopUpPage";
 import PlantSlideshow from "./components/PlantSlideshow";

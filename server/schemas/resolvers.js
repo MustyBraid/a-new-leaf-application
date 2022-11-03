@@ -61,12 +61,6 @@ const resolvers = {
   //       }
   //       throw new AuthenticationError("You need to be logged in!");
   //     },
-  // removeUser: async (parent, args, context) => {
-  //   if (user) {
-  //     return User.findOneAndDelete({ _id });
-  //   }
-  //   throw new AuthenticationError("You need to be logged in!");
-  // },
 };
 
 module.exports = resolvers;
