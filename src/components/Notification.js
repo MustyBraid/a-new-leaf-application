@@ -2,8 +2,14 @@
 
 let timer = null;
 
-export function setupTimer(timeSelected = 60) {
-  timer = setInterval(showNotification, timeSelected * 1000 /*Time Seclected*/);
+export const timeOptions = {
+  Min: 60,
+  Everyday: 60 * 60 * 24,
+  Week: 60 * 60 * 24 * 7,
+};
+
+export function setupTimer(timeSelected) {
+  timer = setInterval(showNotification, timeSelected * 1000);
   console.log(timer);
 }
 
@@ -11,20 +17,11 @@ export function setupTimer(timeSelected = 60) {
 export function showNotification() {
   console.log("showNotification");
   const notification = new Notification("Water Plant!", {
-    icon: "./assets/waterCan.svg",
+    body: "Don't forget to water your plant 🚿",
   });
 }
 
 //kills timer
 export function stopNotification() {
   clearTimeout(timer);
-}
-
-//asking for permision to show notification
-if (Notification.permission === "granted") {
-  showNotification();
-} else if (Notification.permission !== "denied") {
-  Notification.requestPermission().then((permission) => {
-    console.log(permission);
-  });
 }
