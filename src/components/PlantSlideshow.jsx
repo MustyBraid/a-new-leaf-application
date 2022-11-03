@@ -26,34 +26,36 @@ const ImageSlider = () => {
   
     return (
         <div className="z-10 bg-gray-300 flex place-content-center content-center	 justify-center items-center " >
-        <section className='slider items-center bg-white p-2 rounded-lg rounded-t-3xl shadow-md bg-gradient-to-b from-stone-50 to-white'>
+        <section className='slider items-center bg-white -p-32 rounded-lg rounded-t-3xl shadow-md bg-gradient-to-b from-stone-50 to-white'>
+
+        
           {PlantImages.map((plant, index) => {
             return (              
-              <div className={index === current ? 'plant active' : 'plant' + 'w-full justify-self-center image select-none -z-50'} key={index} >
+              <div className={index === current ? 'plant active' : 'plant' } key={index} >
                 {index === current && (
-                  <img src={plant.image} alt='plant image' className='-m-810 mt-6 flex w-full justify-self-center image' />                  
+                  <img src={plant.image} alt='plant image' className='-m-810 mt-6 flex w-full justify-self-center select-none image' />                  
                 )}
               </div>              
             );
           })}
 
           {/* prev / next arrows */}
-          <div id='prev-next-arrows' class=' z-100'>
-            <div id="prev-arrow" className='m-8 left-arrow float-left'>
-              <Icon icon="tabler:arrow-narrow-left" height="2.5rem" width="2.5rem" color='#D1D5DB' inline={true} onClick={prevSlide}/>
+          <div id='prev-next-arrows' class='-mt-52 h-3/6 z-50 selectEnable '>
+            <div id="prev-arrow" className='z-50 m-16 left-arrow float-left selectEnable '>
+              <Icon icon="tabler:arrow-narrow-left"  height="2.5rem" width="2.5rem" color='#D1D5DB' inline={true} onClick={prevSlide}/>
             </div>
-            <div id="prev-arrow" className='m-8 right-arrow float-right'>
+            <div id="prev-arrow" className='z-50 m-16 right-arrow float-right selectEnable '>
               <Icon icon="tabler:arrow-narrow-right" height="2.5rem" width="2.5rem" color='#D1D5DB' inline={true} onClick={nextSlide}/>
             </div>
           </div>
 
           {/* edit plant form */}
-          <div id="editForm" className='p-4 '>          
+          <div id="editForm" className='p-12 mt-52'>     
+
           {/* current age */}
             <div class="whitespace-no-wrap">
             <label for="plantAge">
-              <h1 class="font-bold text-zinc-400 text-sm pb-2">1.2 yrs,</h1>
-              <iconify-icon icon="tabler:cake" height="2.5rem" width="2.5rem" color='#D1D5DB' inline={true}></iconify-icon>
+              <h1 class="font-bold text-zinc-400 text-sm pb-2 whitespace-no-wrap"><Icon icon="tabler:cake" inline={true} color="#9ca3af" />1.2 yrs</h1>            
               <input class="placeholder:italic text-zinc-400 text-lg block bg-white w-30 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 invalid:border-red-500 focus:ring-1 " type="date" name="bday" required pattern="\d{4}-\d{2}-\d{2}">
               </input>
             </label>
@@ -72,10 +74,10 @@ const ImageSlider = () => {
               <p class="text-gray-400">Jade Plant "crassula ovata"</p>
             </label>
             <div class="bg-gray-400 w-64 h-3 rounded-lg mt-2 overflow-hidden">
-              <div class="bg-cyan-400 w-3/4 h-full rounded-lg shadow-md"></div>
+              <div class="bg-gradient-to-r from-blue-300 to-cyan-300 w-3/4 h-full rounded-lg shadow-md"></div>
             </div>
             <div class="bg-gray-400 w-64 h-3 rounded-lg mt-2 overflow-hidden">
-              <div class="bg-green-400 w-3/4 h-full rounded-lg shadow-md"></div>
+              <div class="bg-gradient-to-r from-yellow-300 to-green-300  w-3/4 h-full rounded-lg shadow-md"></div>
             </div>
             <div className="box-border p-5 pb-6 border-2 rounded-lg bg-white m4 mt-4">
             <h3 className='text-sm text-left pb-2 text-zinc-300'>Watering 
