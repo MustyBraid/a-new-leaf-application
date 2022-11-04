@@ -45,11 +45,10 @@ function App() {
         <Router>
           <Navbar />
           <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/editUser" element={<UserSettingsPage />} />
-            <Route path="/editplant" element={<Editor />} />
+            <Route path="/" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/Login" element={<Login />} />
+            <Route path="/main" element={<Main />} />
+            <Route path="/editplant" element={<Editor />} />
             <Route path="/PlantSlideshow" element={<PlantSlideshow />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>

@@ -1,6 +1,36 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import { useMutation, useQuery } from "@apollo/client";
+import { redirect } from "react-router-dom";
+
+import {LOGIN_USER} from '../utils/mutations'
 
 const SignUp = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [login_user] = useMutation(LOGIN_USER)
+
+  async function handleLogin(email, password,e) {
+    console.log(email,password)
+    e.preventDefault()
+    
+  
+    try{
+      if (email != "" && password != ""){
+        let user = await login_user({
+          variables:{
+            email, password
+          }
+        })
+
+        return redirect('/main')
+        console.log(user)
+      }
+    }
+    catch(e){
+      console.error(e);
+    }
+  }
+
   return (
 <body class="antialiased bg-gray-200 text-gray-900 font-sans">
     <div class="flex items-center h-screen w-full">
@@ -12,7 +42,7 @@ const SignUp = () => {
               <span className="far fa-envelope text-gray-500"></span>
             </div>
             <div className="flex-1">
-              <input type="text" placeholder="Email" className="h-10 py-1 pr-3 w-full"/>
+              <input type="text" placeholder="Email" className="h-10 py-1 pr-3 w-full" onChange={(e)=>setEmail(e.target.value)} value={email}/>
             </div>
           </div>
           <div className="border-2 border-solid rounded flex items-center mb-4">
@@ -20,15 +50,19 @@ const SignUp = () => {
               <span className="fas fa-asterisk text-gray-500"></span>
             </div>
             <div className="flex-1">
-              <input type="password" placeholder="Password" className="h-10 py-1 pr-3 w-full"/>
+              <input type="password" placeholder="Password" className="h-10 py-1 pr-3 w-full" onChange={(e)=>setPassword(e.target.value)} value={password}/>
             </div>
           </div>
-          <button class="bg-green-500 hover:bg-green-700 text-white uppercase text-sm font-semibold px-4 py-2 rounded-lg">Login</button>
+          <button class="bg-green-500 hover:bg-green-700 text-white uppercase text-sm font-semibold px-4 py-2 rounded-lg" onClick={(e)=>{handleLogin(email,password, e)}}>Login</button>
         </form>
     </div>
   </div>
 </body>
   )
 }
+
+
+
+
 
 export default SignUp

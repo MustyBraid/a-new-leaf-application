@@ -1,6 +1,14 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import { useMutation, useQuery } from "@apollo/client";
+import { redirect } from "react-router-dom";
+
+import {ADD_USER} from '../utils/mutations'
 
 const SignUp = () => {
+  const [email, setEmail] = useState('')  
+  const [password, setPassword] = useState('')  
+  const [username, setUsername] = useState('')
+  
   return (
 <div className="signup-1 flex items-center relative h-screen">
   <div className="overlay absolute inset-0 z-0 bg-black opacity-75"></div>
@@ -50,7 +58,7 @@ const SignUp = () => {
 
         <div className="border-t border-solid mt-6 md:mt-12 pt-4">
           <p className="text-gray-500 text-center">Already have an account?
-           <a href="/Login" className=" text-green-700 hover:underline"> Sign In</a></p>
+           <a href="/" className=" text-green-700 hover:underline"> Sign In</a></p>
         </div>
 
       </div>
