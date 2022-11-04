@@ -44,23 +44,20 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    // addPlant: async (parent, { userId, plant }) => {
+    //   return User.findOneAndUpdate(
+    //     { _id: userId },
+    //     {
+    //       $addToSet: { plants: plant },
+    //     },
+    //     {
+    //       new: true,
+    //       runValidators: true,
+    //     }
+    //   );
+    // },
+    // },
   },
-  // },
-  //     addPlant: async (parent, { userId, plant }, context) => {
-  //       if (context.user) {
-  //         return User.findOneAndUpdate(
-  //           { _id: userId },
-  //           {
-  //             $addToSet: { plants: plant },
-  //           },
-  //           {
-  //             new: true,
-  //             runValidators: true,
-  //           }
-  //         );
-  //       }
-  //       throw new AuthenticationError("You need to be logged in!");
-  //     },
 };
 
 module.exports = resolvers;
