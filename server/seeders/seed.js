@@ -1,7 +1,7 @@
 const db = require("../config/connection");
 const { User, Plant } = require("../models");
 const userSeeds = require("./userSeeds.json");
-const plantSeeds = require("./plantSeeds.json");
+// const plantSeeds = require("./plantSeeds.json");
 
 db.once("open", async () => {
   try {
@@ -15,14 +15,14 @@ db.once("open", async () => {
   }
 });
 
-db.once("open", async () => {
-  try {
-    await Plant.deleteMany({});
-    await Plant.create(userSeeds);
+// db.once("open", async () => {
+//   try {
+//     await Plant.deleteMany({});
+//     await Plant.create(plantSeeds);
 
-    console.log("all done!");
-    process.exit(0);
-  } catch (err) {
-    throw err;
-  }
-});
+//     console.log("all done!");
+//     process.exit(0);
+//   } catch (err) {
+//     throw err;
+//   }
+// });
