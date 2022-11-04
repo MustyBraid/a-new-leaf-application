@@ -50,6 +50,7 @@ function App() {
             <Route path="/main" element={<Main />} />
             <Route path="/editplant" element={<Editor />} />
             <Route path="/PlantSlideshow" element={<PlantSlideshow />} />
+            <Route path="/userSettingsPage" element={<UserSettingsPage />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Router>
