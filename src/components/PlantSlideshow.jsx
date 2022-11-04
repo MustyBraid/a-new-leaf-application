@@ -133,4 +133,4 @@ function selectionHandler (e){
   setupTimer(e)
 }
 
-  export default ImageSlider;
+export default ImageSlider;

@@ -19,10 +19,27 @@ const userSchema = new Schema({
     required: true,
     minLength: 8,
   },
-  plants: {
-    type: Schema.Types.ObjectId,
-    ref: "Plant",
-  },
+  plants: { type: [String] },
+
+  // {
+  //   plantName: {
+  //     type: String,
+  //     trim: true,
+  //   },
+  //   nickname: {
+  //     type: String,
+  //     required: true,
+  //     minlength: 1,
+  //     maxlength: 280,
+  //   },
+  //   age: {
+  //     type: Number,
+  //   },
+  //   facts: {
+  //     type: String,
+  //     trim: true,
+  //   },
+  // },
 });
 
 userSchema.pre("save", async function (next) {

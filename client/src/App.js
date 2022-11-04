@@ -15,6 +15,7 @@ import SignUp from "./components/Signup";
 import Login from "./components/Login";
 import PlantSlideshow from "./components/PlantSlideshow";
 import PageNotFound from "./components/PageNotFound";
+import UserSettingsPage from "./components/UserSettingsPage";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -45,6 +46,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Main />} />
+            <Route path="/editUser" element={<UserSettingsPage />} />
             <Route path="/editplant" element={<Editor />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/Login" element={<Login />} />

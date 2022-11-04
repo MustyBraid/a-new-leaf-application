@@ -5,6 +5,8 @@ import { showNotification, setupTimer,stopNotification,timeOptions } from './Not
 import sunIcon from '../assets/sunIcon.png';
 import tempGauge from '../assets/tempGauge.png';
 import SearchBar from './SearchBar';
+import wateringcanIcon from '../assets/watering-can-gray.svg';
+import { Icon } from '@iconify/react';
 //Import Plant card
 
 
@@ -45,7 +47,14 @@ const ImageSlider = () => {
             
           );
         })}
-        <h1 class="font-bold text-zinc-400 text-sm pb-2">1.2 yrs,</h1>
+            {/* current age */}
+            <div className="whitespace-no-wrap">
+            <label htmlFor="plantAge">
+              <h1 className="font-bold text-zinc-400 text-sm pb-2 whitespace-no-wrap"><Icon icon="tabler:cake" inline={true} color="#9ca3af" />1.2 yrs</h1>            
+              <input className="placeholder:italic text-zinc-400 text-lg block bg-white w-30 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 invalid:border-red-500 focus:ring-1 " type="date" name="bday" required pattern="\d{4}-\d{2}-\d{2}">
+              </input>
+            </label>
+            </div>
         <p className='text-zinc-400 text-lg'>Hercules</p>
         <FaArrowAltCircleLeft className='left-arrow float-left' onClick={prevSlide} />
         <FaArrowAltCircleRight className='right-arrow float-right' onClick={nextSlide} />
