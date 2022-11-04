@@ -1,8 +1,10 @@
 import React, {useState}from 'react';
 import {PlantImages} from './PlantImages'
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
+import { showNotification, setupTimer,stopNotification,timeOptions } from './Notification';
 import sunIcon from '../assets/sunIcon.png';
 import tempGauge from '../assets/tempGauge.png';
+import SearchBar from './SearchBar';
 //Import Plant card
 
 
@@ -67,15 +69,17 @@ const ImageSlider = () => {
    </div>
    </div>
    <div class="p-10">
+   <SearchBar placeholder={'Search for a plant!'}/>
 
-<div class="dropdown inline-block relative">
+   <div class="dropdown inline-block relative">
+
   <button class="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
-    <span class="mr-1">Dropdown</span>
+    <span class="mr-1">Water Timer</span>
   </button>
   <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
-    <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">One</a></li>
-    <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Two</a></li>
-    <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Three</a></li>
+    <li ><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#" onClick={() => selectionHandler(timeOptions.Min)}>1 Minute</a></li>
+    <li><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#" onClick={()=>selectionHandler(timeOptions.Everyday)}>EveryDay</a></li>
+    <li><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#" onClick={()=>selectionHandler(timeOptions.Week)}>Every Week</a></li>
   </ul>
 </div>
 
@@ -85,4 +89,10 @@ const ImageSlider = () => {
     );
   };
   
-  export default ImageSlider;
+  //Connecting Dropdown options to Notification 
+function selectionHandler (e){
+  console.log(e)
+  setupTimer(e)
+}
+
+export default ImageSlider;

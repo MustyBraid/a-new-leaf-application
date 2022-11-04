@@ -13,8 +13,8 @@ import Navbar from "./components/Navbar";
 import Editor from "./components/Editor";
 import SignUp from "./components/Signup";
 import Login from "./components/Login";
-import PopUpPage from "./components/PopUpPage";
 import PlantSlideshow from "./components/PlantSlideshow";
+import PageNotFound from "./components/PageNotFound";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -48,8 +48,8 @@ function App() {
             <Route path="/editplant" element={<Editor />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/Login" element={<Login />} />
-            <Route path="/PopUpPage" element={<PopUpPage />} />
             <Route path="/PlantSlideshow" element={<PlantSlideshow />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Router>
         <Footer />
