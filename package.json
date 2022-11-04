@@ -23,9 +23,6 @@
     "tailwindcss": "^3.2.1",
     "web-vitals": "^2.1.4"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.12",
     "postcss": "^8.4.18",
