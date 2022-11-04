@@ -1,5 +1,6 @@
 import React, {useState}from 'react';
 import {PlantImages} from './PlantImages'
+import { showNotification, setupTimer,stopNotification,timeOptions } from './Notification';
 import wateringcanIcon from '../assets/watering-can-gray.svg';
 import { Icon } from '@iconify/react';
 //Import Plant card
@@ -8,6 +9,7 @@ import { Icon } from '@iconify/react';
 
 
 
+//Image Slider
 const ImageSlider = () => {
     const [current, setCurrent] = useState(0);
     const length = PlantImages.length;
@@ -47,38 +49,43 @@ const ImageSlider = () => {
             </div>
 
 
-          {/* edit plant form */}
+          {/* edit plant Form */}
           <div id="editForm" className='px-12 pb-12'>     
 
             {/* current age */}
-            <div class="whitespace-no-wrap">
-            <label for="plantAge">
+            <div className="whitespace-no-wrap">
+            <label htmlFor="plantAge">
               <h1 className="font-bold text-zinc-400 text-sm pb-2 whitespace-no-wrap"><Icon icon="tabler:cake" inline={true} color="#9ca3af" />1.2 yrs</h1>            
               <input className="placeholder:italic text-zinc-400 text-lg block bg-white w-30 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 invalid:border-red-500 focus:ring-1 " type="date" name="bday" required pattern="\d{4}-\d{2}-\d{2}">
               </input>
             </label>
             </div>
-            
+
             {/* current name */}
-            <label for="plantNSame">
+            <label htmlFor="plantNSame">
               <p className='text-zinc-400 text-lg'>Hercules</p>
               <input className="placeholder:italic placeholder:text-zinc-400 text-lg block bg-white w-30 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 invalid:border-red-500 focus:ring-1 " placeholder="Hercules" type="text" name="search"/>
             </label>    
 
             {/* selected species */}
             <div className="border-t border-solid mt-6 md:mt-12 pt-6"></div>
-            <label for="plantSpecies">
-              <p class="text-gray-400">Jade Plant "crassula ovata"</p>
+            <label htmlFor="plantSpecies">
+              <p className="text-gray-400">Jade Plant "crassula ovata"</p>
             </label>
-            <div class="bg-gray-400 w-64 h-3 rounded-lg mt-2 overflow-hidden">
-              <div class="bg-gradient-to-r from-blue-300 to-cyan-300 w-3/4 h-full rounded-lg shadow-md"></div>
+            <div className="bg-gray-400 w-64 h-3 rounded-lg mt-2 overflow-hidden">
+              <div className="bg-gradient-to-r from-blue-300 to-cyan-300 w-3/4 h-full rounded-lg shadow-md"></div>
             </div>
-            <div class="bg-gray-400 w-64 h-3 rounded-lg mt-2 overflow-hidden">
-              <div class="bg-gradient-to-r from-yellow-300 to-green-300  w-3/4 h-full rounded-lg shadow-md"></div>
+            <div className="bg-gray-400 w-64 h-3 rounded-lg mt-2 overflow-hidden">
+              <div className="bg-gradient-to-r from-yellow-300 to-green-300  w-3/4 h-full rounded-lg shadow-md"></div>
             </div>
             <div className="box-border p-5 pb-6 border-2 rounded-lg bg-white m4 mt-4">
             <h3 className='text-sm text-left pb-2 text-zinc-300'>Watering 
             <br className='text-lg text-zinc-300' />Let soil dry, mist until moist</h3>
+
+
+
+
+
 
               {/* light - output per plant ID */}
               <div className='box-border p-5 pb-6 border-2 rounded-lg bg-white m4 mt-4 flex-row'>
@@ -92,17 +99,24 @@ const ImageSlider = () => {
             </div>
             </div>
             {/* water schedule button */}
-            <div class="p-10">
-              <div class="dropdown inline-block relative">
-                <button class="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
-                  <span class="mr-1">Water Schedule</span>
+            <div className="p-10">
+              <div className="dropdown inline-block relative">
+                <button className="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
+                  <span className="mr-1">Water Schedule</span>
                 </button>
-                <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
-                  <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block text-center whitespace-no-wrap" href="#">
-                    <input type="checkbox" class="default:ring-2 mx-2  whitespace-no-wrap" />Daily</a>
+                <ul className="dropdown-menu absolute hidden text-gray-700 pt-1">
+                  <li className="">
+                    <a className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#" onClick={() => selectionHandler(timeOptions.Min)}>
+                    <input type="checkbox" className="default:ring-2 mx-2  whitespace-no-wrap" />1 Minute</a>
                   </li>
-                  <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Every Other Day</a></li>
-                  <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Weekly</a></li>
+                  <li className="">
+                    <a className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#" onClick={()=>selectionHandler(timeOptions.Everyday)}>
+                    <input type="checkbox" className="default:ring-2 mx-2  whitespace-no-wrap" />Every Day</a>
+                  </li>
+                  <li>
+                    <a className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#" onClick={()=>selectionHandler(timeOptions.Week)}>
+                    <input type="checkbox" className="default:ring-2 mx-2  whitespace-no-wrap" />Every Week</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -113,4 +127,10 @@ const ImageSlider = () => {
     );
   };
   
+  //Connecting Dropdown options to Notification 
+function selectionHandler (e){
+  console.log(e)
+  setupTimer(e)
+}
+
   export default ImageSlider;

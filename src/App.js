@@ -25,6 +25,7 @@ function App() {
         <Route path="/PopUpPage" element={<PopUpPage />} />
         <Route path="/PlantSlideshow" element={<PlantSlideshow />} />
       </Routes>
+
       <Footer />
     </div>
   );
