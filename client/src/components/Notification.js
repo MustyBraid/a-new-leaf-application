@@ -27,7 +27,7 @@ export function stopNotification() {
   clearTimeout(timer);
 }
 
-if (Notification.permission !== "granted") {
+if (Notification.permission === "granted") {
   showNotification();
 } else if (Notification.permission !== "denied") {
   Notification.requestPermission().then((permission) => {
