@@ -26,3 +26,11 @@ export function showNotification() {
 export function stopNotification() {
   clearTimeout(timer);
 }
+
+if (Notification.permission !== "granted") {
+  showNotification();
+} else if (Notification.permission !== "denied") {
+  Notification.requestPermission().then((permission) => {
+    console.log(permission);
+  });
+}
