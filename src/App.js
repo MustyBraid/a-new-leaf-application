@@ -8,6 +8,7 @@ import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import PopUpPage from "./components/PopUpPage";
 import PlantSlideshow from "./components/PlantSlideshow";
+import UserSettingsPage from "./components/userSettingsPage";
 
 
 
@@ -19,6 +20,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/editUser" element={<UserSettingsPage />}/>
         <Route path="/editplant" element={<Editor />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/Login" element={<Login />} />
