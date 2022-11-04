@@ -1,0 +1,16 @@
+IMPORTANT
+
+from url_wikipedia_en, cutting "https://en.wikipedia.org/wiki/"
+
+from url_usda, cutting "https://plants.usda.gov/core/profile"
+
+from url_gbif, cutting "https://www.gbif.org/species/"
+
+from url_powo, cutting "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:"
+
+from url_plantnet, cutting "https://identify.plantnet.org/species/the-plant-list/"
+
+from url_tropicos, cutting "http://legacy.tropicos.org/Name/"
+
+
+cut plenty of other mostly null fields as well.
