@@ -65,11 +65,17 @@ Read more about The Unlicense here:
 ## Contact Information:
 
 Developers:
-Billy [ Casey Chartier @BillyFletcher99 🎮 ](https://github.com/BillyFletcher99)
-Esmy [ Casey Chartier @Esmy101 🧚 ](https://github.com/Esmy101)
+
+[ Casey Chartier @BillyFletcher99 🎮 ](https://github.com/BillyFletcher99)
+
+[ Casey Chartier @Esmy101 🧚 ](https://github.com/Esmy101)
+
 [ Casey Chartier @calihuddleston 🛸 ](https://github.com/calihuddleston)
+
 [ Casey Chartier @MustyBraid 🤖 ](https://github.com/MustyBraid)
+
 [ B McCool @mc-cool 🐉 ](https://github.com/m-ccool)
+
 
 
 GitHub Username: NA
