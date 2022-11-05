@@ -24,6 +24,10 @@ Meet the tamogotchi style of house plants with a twist of education! You have ac
 ![a-new-leaf_screenshot-login](https://user-images.githubusercontent.com/101916187/200141082-4f289c60-5b6e-46db-a3e2-9470e7fc0de5.png)
 ![a-new-leaf_screenshot-main](https://user-images.githubusercontent.com/101916187/200141853-648dd3d8-ac05-4fcd-8109-ab1fe5a4b681.png)
 
+## Wireframe Design Concept
+![a-new-leaf-wireframe-concept](https://user-images.githubusercontent.com/101916187/200142091-e3ec4a17-0913-4f17-a5f6-108899bf641c.png)
+
+
 ## Installation:
 
 Install npm packages
