@@ -79,5 +79,7 @@ Developers:
 
 
 GitHub Username: NA
+
 GitHub Profile: NA
+
 Email: NA
