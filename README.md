@@ -37,9 +37,9 @@ To install the web application locally, clone the repository. Open the the root 
 
 To run the web application locally, open the the root in command line terminal and run the following:
 
-Seed server `npm run seed`
+`npm run seed` Seed server
 
-Launch and deploy development server `npm run develop`
+`npm run develop` Launch and deploy development server
 
 
 ## Guidelines:
