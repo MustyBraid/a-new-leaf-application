@@ -18,8 +18,6 @@ const typeDefs = gql`
     users: [User]!
     user(userId: ID!): User
     plant(_id: ID!): Plant
-    // plantSpecies(name: String): []
-    // plantInfo(_id: ID!): 
   }
 
   type Auth {
