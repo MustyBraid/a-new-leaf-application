@@ -4,8 +4,6 @@
   "description": "",
   "main": "server/server.js",
   "devDependencies": {
-    "@iconify/react": "^4.0.0",
-    "autoprefixer": "^10.4.12",
     "concurrently": "^5.1.0"
   },
   "scripts": {

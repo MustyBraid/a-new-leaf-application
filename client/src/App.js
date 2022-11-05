@@ -7,15 +7,15 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import Footer from "./components/Footer";
-import Main from "./components/Main";
-import Navbar from "./components/Navbar";
-import Editor from "./components/Editor";
-import SignUp from "./components/Signup";
-import Login from "./components/Login";
-import PlantSlideshow from "./components/PlantSlideshow";
-import PageNotFound from "./components/PageNotFound";
-import UserSettingsPage from "./components/UserSettingsPage";
+import Footer from "./components/Footer.jsx";
+import Main from "./components/Main.jsx";
+import Navbar from "./components/Navbar.jsx";
+import Editor from "./components/Editor.jsx";
+import SignUp from "./components/Signup.jsx";
+import Login from "./components/Login.jsx";
+import PlantSlideshow from "./components/PlantSlideshow.jsx";
+import PageNotFound from "./components/PageNotFound.jsx";
+import UserSettingsPage from "./components/UserSettingsPage.jsx";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -45,12 +45,12 @@ function App() {
         <Router>
           <Navbar />
           <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/editUser" element={<UserSettingsPage />} />
-            <Route path="/editplant" element={<Editor />} />
+            <Route path="/" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/Login" element={<Login />} />
+            <Route path="/main" element={<Main />} />
+            <Route path="/editplant" element={<Editor />} />
             <Route path="/PlantSlideshow" element={<PlantSlideshow />} />
+            <Route path="/userSettingsPage" element={<UserSettingsPage />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Router>
