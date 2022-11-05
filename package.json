@@ -15,7 +15,7 @@
     "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build && cd .. && cp -r ./client/build/* ./server/public && echo Done"
+    "build": "cd client && npm run build && cd .. && cp -r ./client/dist/* ./server/public && echo Done"
   },
   "keywords": [],
   "author": "",
