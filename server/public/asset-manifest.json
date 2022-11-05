@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.eb6936f8.css",
+    "main.js": "/static/js/main.078d0c8c.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/Plant1.png": "/static/media/Plant1.46df702b1d036e3de622.png",
+    "static/media/Plant5.gif": "/static/media/Plant5.5a72f5dbb1a07b3d2651.gif",
+    "static/media/Plant.gif": "/static/media/Plant.77b01a2a7e38d9d6bf28.gif",
+    "static/media/Plant2.gif": "/static/media/Plant2.c6afd0fc28cdad96a9fe.gif",
+    "static/media/Plant4.gif": "/static/media/Plant4.a558b32083314f40117d.gif",
+    "static/media/Plant6.gif": "/static/media/Plant6.df764c5ae902025a6d4e.gif",
+    "static/media/Plant3.gif": "/static/media/Plant3.6d1ce302fae5f6d8d97e.gif",
+    "static/media/Plant7.gif": "/static/media/Plant7.ef09dc85322cfeb858f1.gif",
+    "static/media/UserIcon.png": "/static/media/UserIcon.94165d4873aaef3a1740.png",
+    "static/media/lotus-flower-logo.png": "/static/media/lotus-flower-logo.17a7dd59f78a1c181239.png",
+    "index.html": "/index.html",
+    "static/media/calendar-event.svg": "/static/media/calendar-event.373d3f858a22b01a8dfc.svg",
+    "main.eb6936f8.css.map": "/static/css/main.eb6936f8.css.map",
+    "main.078d0c8c.js.map": "/static/js/main.078d0c8c.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb6936f8.css",
+    "static/js/main.078d0c8c.js"
+  ]
+}
