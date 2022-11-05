@@ -16,34 +16,8 @@ const Main = () => {
     <a href="/PlantSlideshow"><img className="w-20 mx-auto opacity-25 " src={plusSign} alt="" /></a>
     
    </div>
-   <div className="shadow-md shadow-[#ccc9c4] hover:scale-110 duration-500 rounded-2xl">
-    <a href="/PlantSlideshow"><img className="w-20 mx-auto opacity-25 " src={plusSign} alt="" /></a>
-    
-   </div>
-   <div className="shadow-md shadow-[#ccc9c4] hover:scale-110 duration-500 rounded-2xl">
-    <a href="/PlantSlideshow"><img className="w-20 mx-auto opacity-25 " src={plusSign} alt="" /></a>
-    
-   </div>
-   <div className="shadow-md shadow-[#ccc9c4] hover:scale-110 duration-500 rounded-2xl">
-    <a href="/PlantSlideshow"><img className="w-20 mx-auto opacity-25 " src={plusSign} alt="" /></a>
-    
-   </div>
-   <div className="shadow-md shadow-[#ccc9c4] hover:scale-110 duration-500 rounded-2xl">
-    <a href="/PlantSlideshow"><img className="w-20 mx-auto opacity-25 " src={plusSign} alt="" /></a>
    
-   </div>
-   <div className="shadow-md shadow-[#ccc9c4] hover:scale-110 duration-500 rounded-2xl">
-    <a href="/PlantSlideshow"><img className="w-20 mx-auto opacity-25 " src={plusSign} alt="" /></a>
-    
-   </div>
-   <div className="shadow-md shadow-[#ccc9c4] hover:scale-110 duration-500 rounded-2xl">
-    <a href="/PlantSlideshow"><img className="w-20 mx-auto opacity-25 " src={plusSign} alt="" /></a>
-    
-   </div>
-   <div className="shadow-md shadow-[#ccc9c4] hover:scale-110 duration-500 rounded-2xl">
-    <a href="/PlantSlideshow"><img className="w-20 mx-auto opacity-25 " src={plusSign} alt="" /></a>
-    
-   </div>
+   
   </div>
  </div>
 </div>
