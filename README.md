@@ -60,11 +60,11 @@ Read more about The Unlicense here:
 
 ## Contact Information
 
-[ Casey Chartier @BillyFletcher99 🎮 ](https://github.com/BillyFletcher99)
+[ Billy Fletcher @BillyFletcher99 🎮 ](https://github.com/BillyFletcher99)
 
-[ Casey Chartier @Esmy101 🧚 ](https://github.com/Esmy101)
+[ Esmeralda Romero @Esmy101 🧚 ](https://github.com/Esmy101)
 
-[ Casey Chartier @calihuddleston 🛸 ](https://github.com/calihuddleston)
+[ Cali Huddleston @calihuddleston 🛸 ](https://github.com/calihuddleston)
 
 [ Casey Chartier @MustyBraid 🤖 ](https://github.com/MustyBraid)
 
