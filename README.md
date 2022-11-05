@@ -22,8 +22,7 @@ Meet the tamogotchi style of house plants with a twist of education! You have ac
 
 ## Preview of Deployement
 ![a-new-leaf_screenshot-login](https://user-images.githubusercontent.com/101916187/200141082-4f289c60-5b6e-46db-a3e2-9470e7fc0de5.png)
-![a-new-leaf_screenshot-main](https://user-images.githubusercontent.com/101916187/200141083-77a047b8-2131-4e3e-bb90-bba5bee0c658.png)
-
+![a-new-leaf_screenshot-main](https://user-images.githubusercontent.com/101916187/200141853-648dd3d8-ac05-4fcd-8109-ab1fe5a4b681.png)
 
 ## Installation:
 
