@@ -33,11 +33,16 @@ NA
 
 To run the web application locally, clone the repository. Open the the root in command line terminal, and run the following:
 
-Install npm packages 
+Install npm packages
+
 `npm install`
+
 Seed server 
+
 `npm run seed`
+
 Launch and deploy development server 
+
 `npm run develop`
 
 ## Guidelines:
