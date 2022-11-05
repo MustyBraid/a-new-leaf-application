@@ -69,7 +69,7 @@ const ImageSlider = () => {
         <FaArrowAltCircleLeft className='left-arrow float-left' onClick={prevSlide} />
         <FaArrowAltCircleRight className='right-arrow float-right' onClick={nextSlide} />
         <div className="border-t border-solid mt-6 md:mt-12 pt-6"></div>
-        <p class="text-gray-400">Jade Plant "crassula ovata"</p>
+        <SearchBar placeholder={'Search for a plant!'}/>
         <div class="bg-gray-400 w-64 h-3 rounded-lg mt-2 overflow-hidden">
     <div class="bg-cyan-400 w-3/4 h-full rounded-lg shadow-md"></div>
    </div>
@@ -88,7 +88,6 @@ const ImageSlider = () => {
    </div>
    </div>
    <div class="p-10">
-   <SearchBar placeholder={'Search for a plant!'}/>
 
    <div class="dropdown inline-block relative">
 
