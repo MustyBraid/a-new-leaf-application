@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+const db = process.env.ATLAS_URI;
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/users", {
+mongoose.connect(db, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
