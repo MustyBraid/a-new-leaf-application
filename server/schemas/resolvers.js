@@ -10,7 +10,7 @@ const resolvers = {
 
     user: async (root, { userId }) => {
       return User.findOne({ _id: userId });
-    },
+    }//,
 
     // plantSpecies: async (parent, { name }) => {
     //   const params = {};

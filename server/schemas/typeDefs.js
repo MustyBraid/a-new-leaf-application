@@ -17,6 +17,10 @@ const typeDefs = gql`
   type Query {
     users: [User]!
     user(userId: ID!): User
+<<<<<<< HEAD
+=======
+    plant(_id: ID!): Plant
+>>>>>>> ac46b8156ea8fe8764a0a96e060b59ee5656accb
   }
 
   type Auth {
