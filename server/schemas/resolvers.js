@@ -64,10 +64,10 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addPlant: async (parent, { nickname, birthDate }, context) => {
+    addPlant: async (parent, { name, birthDate }, context) => {
       console.log(context);
       if (context.user) {
-        const plant = new Plant.create({ nickname, birthDate });
+        const plant = new Plant({ name, birthDate });
 
         await User.findByIdAndUpdate(context.user.id, {
           $push: { plants: plant },

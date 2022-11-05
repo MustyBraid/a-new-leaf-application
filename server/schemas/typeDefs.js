@@ -18,7 +18,6 @@ const typeDefs = gql`
   type Query {
     users: [User]!
     user(userId: ID!): User
-    plant(_id: ID!): Plant
   }
 
   type Auth {
