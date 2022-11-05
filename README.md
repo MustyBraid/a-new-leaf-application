@@ -27,15 +27,15 @@ Heroku Deployement: **[ live application ](https://a-newer-leaf.herokuapp.com/)*
 
 ## Installation:
 
-NA
+Install npm packages
+
+To install the web application locally, clone the repository. Open the the root in command line terminal, and run the following:
+
+`npm install`
 
 ## Usage:
 
-To run the web application locally, clone the repository. Open the the root in command line terminal, and run the following:
-
-Install npm packages
-
-`npm install`
+To run the web application locally, open the the root in command line terminal and run the following:
 
 Seed server 
 
@@ -45,20 +45,32 @@ Launch and deploy development server
 
 `npm run develop`
 
+
 ## Guidelines:
 
 NA
 
+
 ## Test Instructions:
 
 NA
+
 
 ## License:
 
 Read more about The Unlicense here:
 [The Unlicense](http://unlicense.org/)
 
+
 ## Contact Information:
+
+Developers:
+Billy [ Casey Chartier @BillyFletcher99 🎮 ](https://github.com/BillyFletcher99)
+Esmy [ Casey Chartier @Esmy101 🧚 ](https://github.com/Esmy101)
+[ Casey Chartier @calihuddleston 🛸 ](https://github.com/calihuddleston)
+[ Casey Chartier @MustyBraid 🤖 ](https://github.com/MustyBraid)
+[ B McCool @mc-cool 🐉 ](https://github.com/m-ccool)
+
 
 GitHub Username: NA
 GitHub Profile: NA
