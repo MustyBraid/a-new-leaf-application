@@ -2,8 +2,9 @@ import React, {useState}from 'react';
 import {PlantImages} from './PlantImages'
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 import { showNotification, setupTimer,stopNotification,timeOptions } from './Notification';
-import SearchBar from './SearchBar';
+import SearchBar from './SearchBar.jsx';
 import { Icon } from '@iconify/react';
+import { Navigate } from "react-router-dom";
 //Import Plant card
 
 
@@ -71,6 +72,7 @@ const ImageSlider = () => {
           <div className="border-t border-solid mt-6 md:mt-12 pt-6"></div>
           <label htmlFor="plantSpecies">
             <p className="text-gray-400">Jade Plant "crassula ovata"</p>
+            <SearchBar placeholder={"Search for a plant!"}/>
           </label>
           <div className="bg-gray-400 w-64 h-3 rounded-lg mt-2 overflow-hidden">
             <div className="bg-gradient-to-r from-blue-300 to-cyan-300 w-3/4 h-full rounded-lg shadow-md"></div>
@@ -133,5 +135,8 @@ function selectionHandler (e){
   console.log(e)
   setupTimer(e)
 }
+
+
+
 
 export default ImageSlider;

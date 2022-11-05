@@ -23,9 +23,10 @@ const SignUp = () => {
             name
           }
         })
-        const {token, user} = data
+        const {token, user} = data.addUser
         Auth.login(token)
         setRedirect(true)
+        console.log(data)
         return <Navigate to = "/main"/>
       }
     }

@@ -1,26 +1,21 @@
 const { Schema, model } = require("mongoose");
 
 const plantSchema = new Schema({
-  plantName: {
-    type: String,
-    required: true,
-    minlength: 1,
-    maxlength: 280,
-  },
   nickname: {
     type: String,
     required: true,
     minlength: 1,
     maxlength: 280,
   },
-  age: {
-    type: Number,
+  birthDate: {
+    type: Date,
   },
-  facts: {
-    type: String,
-    minlength: 1,
-    maxlength: 500,
-  },
+  plantSpecies: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "SpeciesDatabase",
+    },
+  ],
 });
 
 const Plant = model("Plant", plantSchema);

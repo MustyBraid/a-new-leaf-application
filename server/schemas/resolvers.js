@@ -44,19 +44,27 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    // addPlant: async (parent, { userId, plant }) => {
-    //   return User.findOneAndUpdate(
-    //     { _id: userId },
-    //     {
-    //       $addToSet: { plants: plant },
-    //     },
-    //     {
-    //       new: true,
-    //       runValidators: true,
-    //     }
-    //   );
-    // },
-    // },
+    addPlant: async (parent, { plantSpecies }, context) => {
+      console.log(context);
+      if (context.user) {
+        const plant = new Plant({ plantSpecies });
+
+        await User.findByIdAndUpdate(context.user.id, {
+          $push: { plants: plant },
+        });
+
+        return plant;
+      }
+      throw new AuthenticationError("You must be logged in!");
+    },
+    updateUser: async (parent, args, context) => {
+      if (context.user) {
+        return User.findByIdAndUpdate(context.user.id, args, {
+          new: true,
+        });
+      }
+      throw new AuthenticationError("You must be logged in!");
+    },
   },
 };
 
