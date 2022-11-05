@@ -52,7 +52,7 @@ NA
 
 
 ## License:
-
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 Read more about The Unlicense here:
 [The Unlicense](http://unlicense.org/)
 
