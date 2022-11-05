@@ -7,6 +7,7 @@ import tempGauge from '../assets/tempGauge.png';
 import SearchBar from './SearchBar';
 import wateringcanIcon from '../assets/watering-can-gray.svg';
 import { Icon } from '@iconify/react';
+import { Navigate } from "react-router-dom";
 //Import Plant card
 
 
@@ -16,6 +17,14 @@ import { Icon } from '@iconify/react';
 const ImageSlider = () => {
     const [current, setCurrent] = useState(0);
     const length = PlantImages.length;
+    const [redirect, setRedirect ] = useState(false)
+
+    //Add plant to main page
+    function addPlant (){
+      console.log(addPlant);
+      //route to main page and push + over 
+      setRedirect(true)
+    }
   
     const nextSlide = () => {
       setCurrent(current === length - 1 ? 0 : current + 1);
@@ -31,6 +40,7 @@ const ImageSlider = () => {
   
     return (
         <div className="bg-gray-300 flex justify-center items-center h-fit" >
+          
       <section className='slider bg-white p-10 rounded-lg rounded-t-3xl shadow-md bg-gradient-to-b from-stone-50 to-white'>
         {PlantImages.map((plant, index) => {
           return (
@@ -59,7 +69,7 @@ const ImageSlider = () => {
         <FaArrowAltCircleLeft className='left-arrow float-left' onClick={prevSlide} />
         <FaArrowAltCircleRight className='right-arrow float-right' onClick={nextSlide} />
         <div className="border-t border-solid mt-6 md:mt-12 pt-6"></div>
-        <p class="text-gray-400">Jade Plant "crassula ovata"</p>
+        <SearchBar placeholder={'Search for a plant!'}/>
         <div class="bg-gray-400 w-64 h-3 rounded-lg mt-2 overflow-hidden">
     <div class="bg-cyan-400 w-3/4 h-full rounded-lg shadow-md"></div>
    </div>
@@ -78,7 +88,6 @@ const ImageSlider = () => {
    </div>
    </div>
    <div class="p-10">
-   <SearchBar placeholder={'Search for a plant!'}/>
 
    <div class="dropdown inline-block relative">
 
@@ -90,8 +99,12 @@ const ImageSlider = () => {
     <li><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#" onClick={()=>selectionHandler(timeOptions.Everyday)}>EveryDay</a></li>
     <li><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#" onClick={()=>selectionHandler(timeOptions.Week)}>Every Week</a></li>
   </ul>
+  
 </div>
-
+<div>
+    <button class="bg-gray-300 mt-4 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center" onClick={()=>addPlant()}>+Add</button>
+  </div>
+  {redirect ?<Navigate to = "/main"/>:null}
 </div>
       </section>
       </div>
@@ -103,5 +116,8 @@ function selectionHandler (e){
   console.log(e)
   setupTimer(e)
 }
+
+
+
 
 export default ImageSlider;
