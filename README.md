@@ -31,7 +31,7 @@ Install npm packages
 
 To install the web application locally, clone the repository. Open the the root in command line terminal, and run the following:
 
-`npm install`
+`npm install` Install node module packages
 
 ## Usage:
 
