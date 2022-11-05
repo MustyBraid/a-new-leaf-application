@@ -5,13 +5,13 @@
 ## Table of Contents
 
 - [Description](#description)
-- [Deployed Application](#deployedapplication)
+- [Deployed-Application](#deployed-application)
 - [Installation](#install)
 - [Usage](#usage)
 - [Guidelines](#guidelines)
 - [Test-Instructions](#test)
 - [Licenses](#license)
-- [Contact-Information](#email)
+- [Contact-Information](#contact-information)
 
 ## Description:
 
