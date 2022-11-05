@@ -18,7 +18,7 @@ const ImageSlider = () => {
     const [current, setCurrent] = useState(0);
     const length = PlantImages.length;
     const [redirect, setRedirect ] = useState(false)
-    
+
     //Add plant to main page
     function addPlant (){
       console.log(addPlant);
