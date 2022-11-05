@@ -12,13 +12,33 @@ const resolvers = {
       return User.findOne({ _id: userId });
     },
 
-    // plants: async () => {
-    //   return Plant.findAll();
-    // },
+    plantSpecies: async (parent, { name }) => {
+      const params = {};
 
-    // plant: async (parent, { plantId }) => {
-    //     return Plant.findOne({_id: plantId});
-    // }
+      if (name) {
+        params.name = {
+          $ref: "",
+          $db: "",
+          $name: "",
+        };
+      }
+    },
+
+    plantInfo: async (parent, { id }) => {
+      plantSpecies.findById(id).populate("plant");
+    },
+
+    plant: async (parent, { _id }, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id).populate({
+          path: "plants.plantSpecies",
+          populate: "plant",
+        });
+
+        return user.plants.id(_id);
+      }
+      throw new AuthenticationError("You must be logged in!");
+    },
   },
 
   Mutation: {

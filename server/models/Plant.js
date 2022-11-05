@@ -13,7 +13,7 @@ const plantSchema = new Schema({
   plantSpecies: [
     {
       type: Schema.Types.ObjectId,
-      ref: "SpeciesDatabase",
+      ref: "",
     },
   ],
 });
