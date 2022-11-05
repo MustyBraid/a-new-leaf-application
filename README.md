@@ -64,7 +64,6 @@ Read more about The Unlicense here:
 
 ## Contact Information
 
-# Developers
 
 [ Casey Chartier @BillyFletcher99 🎮 ](https://github.com/BillyFletcher99)
 
