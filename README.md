@@ -18,7 +18,7 @@
 Meet the tamogotchi style of house plants with a twist of education! You have access to all the articles and information you need to take care of your house plants. In addition, take care of your virtual plants and keep them happy by upkeeping their water and happiness levels. Reminders available if you easily forget!
 
 ## Deployed Application
-**[ live application (Heroku Deployement) ](https://a-newer-leaf.herokuapp.com/)**
+**[ Live Application (Heroku Deployement) ](https://a-newer-leaf.herokuapp.com/)**
 
 ## Preview of Deployement
 ![a-new-leaf_screenshot-login](https://user-images.githubusercontent.com/101916187/200141082-4f289c60-5b6e-46db-a3e2-9470e7fc0de5.png)
