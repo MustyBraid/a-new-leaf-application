@@ -5,7 +5,7 @@
 ## Table of Contents
 
 - [Description](#description)
-- [Deployed Application](#deployed application)
+- [Deployed Application](#deployedapplication)
 - [Installation](#install)
 - [Usage](#usage)
 - [Guidelines](#guidelines)
