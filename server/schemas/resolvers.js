@@ -12,33 +12,33 @@ const resolvers = {
       return User.findOne({ _id: userId });
     },
 
-    plantSpecies: async (parent, { name }) => {
-      const params = {};
+    // plantSpecies: async (parent, { name }) => {
+    //   const params = {};
 
-      if (name) {
-        params.name = {
-          $ref: "",
-          $db: "",
-          $name: "",
-        };
-      }
-    },
+    //   if (name) {
+    //     params.name = {
+    //       $ref: "",
+    //       $db: "",
+    //       $name: "",
+    //     };
+    //   }
+    // },
 
-    plantInfo: async (parent, { id }) => {
-      plantSpecies.findById(id).populate("plant");
-    },
+    // plantInfo: async (parent, { id }) => {
+    //   plantSpecies.findById(id).populate("plant");
+    // },
 
-    plant: async (parent, { _id }, context) => {
-      if (context.user) {
-        const user = await User.findById(context.user._id).populate({
-          path: "plants.plantSpecies",
-          populate: "plant",
-        });
+    // plant: async (parent, { _id }, context) => {
+    //   if (context.user) {
+    //     const user = await User.findById(context.user._id).populate({
+    //       path: "plants.plantSpecies",
+    //       populate: "plant",
+    //     });
 
-        return user.plants.id(_id);
-      }
-      throw new AuthenticationError("You must be logged in!");
-    },
+    //     return user.plants.id(_id);
+    //   }
+    //   throw new AuthenticationError("You must be logged in!");
+    // },
   },
 
   Mutation: {
@@ -64,19 +64,19 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addPlant: async (parent, { plantSpecies }, context) => {
-      console.log(context);
-      if (context.user) {
-        const plant = new Plant({ plantSpecies });
+    // addPlant: async (parent, { plantSpecies }, context) => {
+    //   console.log(context);
+    //   if (context.user) {
+    //     const plant = new Plant({ plantSpecies });
 
-        await User.findByIdAndUpdate(context.user.id, {
-          $push: { plants: plant },
-        });
+    //     await User.findByIdAndUpdate(context.user.id, {
+    //       $push: { plants: plant },
+    //     });
 
-        return plant;
-      }
-      throw new AuthenticationError("You must be logged in!");
-    },
+    //     return plant;
+    //   }
+    //   throw new AuthenticationError("You must be logged in!");
+    // },
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return User.findByIdAndUpdate(context.user.id, args, {
