@@ -75,11 +75,3 @@ Developers:
 [ Casey Chartier @MustyBraid 🤖 ](https://github.com/MustyBraid)
 
 [ B McCool @mc-cool 🐉 ](https://github.com/m-ccool)
-
-
-
-GitHub Username: NA
-
-GitHub Profile: NA
-
-Email: NA
