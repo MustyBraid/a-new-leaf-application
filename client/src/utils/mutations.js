@@ -21,3 +21,13 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_PLANT = gql`
+  mutation addPlant($nickname: String!, birthDate: String!) {
+    addPlant(nickname: $nickname, birthDate: $birthDate) {
+      plant {
+        _id
+      }
+    }
+  }
+`;
