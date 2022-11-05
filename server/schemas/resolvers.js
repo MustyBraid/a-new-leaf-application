@@ -10,7 +10,7 @@ const resolvers = {
 
     user: async (root, { userId }) => {
       return User.findOne({ _id: userId });
-    }//,
+    }, //,
 
     // plantSpecies: async (parent, { name }) => {
     //   const params = {};
@@ -64,10 +64,10 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addPlant: async (parent, { plantSpecies }, context) => {
+    addPlant: async (parent, { nickname, birthDate }, context) => {
       console.log(context);
       if (context.user) {
-        const plant = new Plant({ plantSpecies });
+        const plant = new Plant.create({ nickname, birthDate });
 
         await User.findByIdAndUpdate(context.user.id, {
           $push: { plants: plant },
