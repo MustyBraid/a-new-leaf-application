@@ -64,19 +64,19 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    // addPlant: async (parent, { plantSpecies }, context) => {
-    //   console.log(context);
-    //   if (context.user) {
-    //     const plant = new Plant({ plantSpecies });
+    addPlant: async (parent, { name, birthDate }, context) => {
+      console.log(context);
+      if (context.user) {
+        const plant = new Plant({ name, birthDate });
 
-    //     await User.findByIdAndUpdate(context.user.id, {
-    //       $push: { plants: plant },
-    //     });
+        await User.findByIdAndUpdate(context.user.id, {
+          $push: { plants: plant },
+        });
 
-    //     return plant;
-    //   }
-    //   throw new AuthenticationError("You must be logged in!");
-    // },
+        return plant;
+      }
+      throw new AuthenticationError("You must be logged in!");
+    },
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return User.findByIdAndUpdate(context.user.id, args, {

@@ -27,7 +27,6 @@ const SignUp = () => {
         Auth.login(token)
         setRedirect(true)
         console.log(data)
-        return <Navigate to = "/main"/>
       }
     }
     catch(e){
@@ -38,7 +37,7 @@ const SignUp = () => {
   
   return (
 <div className="signup-1 flex items-center relative h-screen">
-  
+  {redirect? <Navigate to = "/main"/>:null}
   <div className="overlay absolute inset-0 z-0 bg-black opacity-75"></div>
   <div className="container px-4 mx-auto relative z-10">
     <div className="sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-5/12 mx-auto">
