@@ -27,9 +27,9 @@ Meet the tamogotchi style of house plants with a twist of education! You have ac
 ![Screen Shot 2022-11-05 at 8 00 12 PM](https://user-images.githubusercontent.com/102004484/200147807-7e9939a5-d326-4910-8e24-caab82a1e806.png)
 
 ![a-new-leaf_screenshot-main](https://user-images.githubusercontent.com/101916187/200141853-648dd3d8-ac05-4fcd-8109-ab1fe5a4b681.png)
-![Screen Shot 2022-11-05 at 8 00 37 PM](https://user-images.githubusercontent.com/102004484/200147811-3f80fb61-aa1e-440a-aa9b-f87044
+![Screen Shot 2022-11-05 at 8 00 37 PM](https://user-images.githubusercontent.com/102004484/200147811-3f80fb61-aa1e-440a-aa9b-f870446eb31e.png)
 ![Screen Shot 2022-11-05 at 8 00 46 PM](https://user-images.githubusercontent.com/102004484/200147813-0069ade5-bf46-4f2d-b3f1-8fc4a99284a0.png)
-6eb31e.png)
+
 
 ## Wireframe Design Concept
 ![a-new-leaf-wireframe-concept](https://user-images.githubusercontent.com/101916187/200142091-e3ec4a17-0913-4f17-a5f6-108899bf641c.png)
