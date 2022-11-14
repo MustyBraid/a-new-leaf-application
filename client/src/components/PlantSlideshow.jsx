@@ -14,6 +14,13 @@ import { Navigate } from "react-router-dom";
 const ImageSlider = () => {
   const [current, setCurrent] = useState(0);
   const length = PlantImages.length;
+  const [redirect, setRedirect ] = useState(false)
+
+  function addPlant (){
+    console.log(addPlant);
+    //route to main page and push + over 
+    setRedirect(true)
+  }
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -84,11 +91,6 @@ const ImageSlider = () => {
           <h3 className='text-sm text-left pb-2 text-zinc-300'>Watering 
           <br className='text-lg text-zinc-300' />Let soil dry, mist until moist</h3>
 
-
-
-
-
-
             {/* light - output per plant ID */}
             <div className='box-border p-5 pb-6 border-2 rounded-lg bg-white m4 mt-4 flex-row'>
             <div id='inputLight' className='box-border p-5 pb-6 border-2 rounded-lg flex-row flex justify-center content-center whitespace-no-wrap'>
@@ -120,6 +122,10 @@ const ImageSlider = () => {
                   <input type="checkbox" className="default:ring-2 mx-2  whitespace-no-wrap" />Every Week</a>
                 </li>
               </ul>
+            </div>
+            <div>
+                <button class="bg-gray-300 mt-4 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center" onClick={()=>addPlant()}>+Add</button>
+                {redirect ?<Navigate to = "/main"/>:null}
             </div>
           </div>
         </form>
