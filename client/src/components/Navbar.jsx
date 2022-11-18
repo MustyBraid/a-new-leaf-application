@@ -1,8 +1,10 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigation  } from "react-router-dom";
 import { Icon } from '@iconify/react';
+import  Auth from '../utils/auth'
 
-const NavBar = () => {
+
+const NavBar = (props) => {
   return (
     
 <nav className="z-50 fixed w-full h-[80px] flex items-center px-4 bg-green-300 text-gray-300 rounded-b-3xl ">
@@ -16,7 +18,15 @@ const NavBar = () => {
             </Link>
         </div>
         <div className="hidden md:flex items-center space-x-1">
-          <Link to="/signup" className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"> Sign-Up </Link>
+          {/* if user is logged in show saved plants and logout */}
+          {Auth.loggedIn() ? (
+            <>
+              <Link to="/" className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300" onClick={Auth.logout}>LogOut</Link>
+              {/*to show all saved plant card*/}
+            </>
+          ) : (
+            <Link to="/signup" className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"> Sign-Up </Link>
+          )}
           <Icon icon="tabler:user-circle" className='mx-4' width='2.5rem' height='2.5rem'  color='white'/>
         </div>
       </div>
