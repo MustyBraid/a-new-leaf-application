@@ -1,5 +1,9 @@
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx,html}",
+    "./public/*.{js,jsx,html}",
+    "./dist/*.{js,jsx,html}",
+  ],
   theme: {
     borderRadius: {
       none: "0",

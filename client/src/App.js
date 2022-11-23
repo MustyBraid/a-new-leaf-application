@@ -9,7 +9,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import Footer from "./components/Footer.jsx";
 import Main from "./components/Main.jsx";
-import Navbar from "./components/Navbar.jsx";
+import TemplatePage from "./components/TemplatePage";
 import Editor from "./components/Editor.jsx";
 import SignUp from "./components/Signup.jsx";
 import Login from "./components/Login.jsx";
@@ -43,15 +43,29 @@ function App() {
     <div>
       <ApolloProvider client={client}>
         <Router>
-          <Navbar />
           <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/main" element={<Main />} />
-            <Route path="/editplant" element={<Editor />} />
-            <Route path="/PlantSlideshow" element={<PlantSlideshow />} />
-            <Route path="/userSettingsPage" element={<UserSettingsPage />} />
-            <Route path="*" element={<PageNotFound />} />
+            <Route path="/" element={<TemplatePage page={<Login />} />} />
+            <Route
+              path="/signup"
+              element={<TemplatePage page={<SignUp />} />}
+            />
+            <Route path="/main" element={<TemplatePage page={<Main />} />} />
+            <Route
+              path="/editplant"
+              element={<TemplatePage page={<Editor />} />}
+            />
+            <Route
+              path="/PlantSlideshow"
+              element={<TemplatePage page={<PlantSlideshow />} />}
+            />
+            <Route
+              path="/userSettingsPage"
+              element={<TemplatePage page={<UserSettingsPage />} />}
+            />
+            <Route
+              path="*"
+              element={<TemplatePage page={<PageNotFound />} />}
+            />
           </Routes>
         </Router>
         <Footer />

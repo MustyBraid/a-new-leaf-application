@@ -6,7 +6,7 @@
   },
   "description": "",
   "main": "server/server.js",
-  "devDependencies": {
+  "dependencies": {
     "concurrently": "^5.1.0",
     "webpack-cli": "^4.10.0"
   },
@@ -15,7 +15,7 @@
     "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build && cd .. && cp -r ./client/dist/* ./server/public && echo Done"
   },
   "keywords": [],
   "author": "",
