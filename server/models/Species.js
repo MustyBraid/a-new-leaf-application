@@ -8,14 +8,30 @@ const speciesSchema = new Schema({
   common_names: {
     type: String,
   },
-  family: {},
-  family_common_name: {},
-  gbif: {},
-  plantnet: {},
-  powo: {},
-  scientific_name: {},
-  synonyms: {},
-  usda: {},
+  family: {
+    type: String,
+  },
+  family_common_name: {
+    type: String,
+  },
+  gbif: {
+    type: String,
+  },
+  plantnet: {
+    type: String,
+  },
+  powo: {
+    type: String,
+  },
+  scientific_name: {
+    type: String,
+  },
+  synonyms: {
+    type: String,
+  },
+  usda: {
+    type: String,
+  },
 });
 
 const Species = model("Species", speciesSchema);
