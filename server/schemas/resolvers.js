@@ -12,9 +12,14 @@ const resolvers = {
       return User.findOne({ _id: userId });
     }, //,
 
-    // speciesInfo: async (parent, { id }) => {
-    //   species.findById(id).populate("plant");
-    // },
+    species: (exports = async function fetchSpecies(source, input) {
+      const mongodb = context.services.get("mongodb-atlas");
+      const species = mongodb.db("a-new-leaf").collection("species");
+      // Replace them with your ^^^^ Database Name and your ^^^^ Collection Name
+      return await species.find({ plant_id: source._id }).toArray();
+      // Please note that the above source ^^ is responsible for getting
+      // the details from the parent GraphQL Type (User).
+    }),
   },
 
   Mutation: {
@@ -62,15 +67,6 @@ const resolvers = {
       throw new AuthenticationError("You must be logged in!");
     },
   },
-};
-
-exports = async function fetchSpecies(source, input) {
-  const mongodb = context.services.get("mongodb-atlas");
-  const species = mongodb.db("a-new-leaf").collection("species");
-  // Replace them with your ^^^^ Database Name and your ^^^^ Collection Name
-  return await species.find({ plant_id: source._id }).toArray();
-  // Please note that the above source ^^ is responsible for getting
-  // the details from the parent GraphQL Type (User).
 };
 
 module.exports = resolvers;
