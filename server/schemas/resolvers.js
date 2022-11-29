@@ -12,32 +12,8 @@ const resolvers = {
       return User.findOne({ _id: userId });
     }, //,
 
-    // plantSpecies: async (parent, { name }) => {
-    //   const params = {};
-
-    //   if (name) {
-    //     params.name = {
-    //       $ref: "",
-    //       $db: "",
-    //       $name: "",
-    //     };
-    //   }
-    // },
-
-    // plantInfo: async (parent, { id }) => {
-    //   plantSpecies.findById(id).populate("plant");
-    // },
-
-    // plant: async (parent, { _id }, context) => {
-    //   if (context.user) {
-    //     const user = await User.findById(context.user._id).populate({
-    //       path: "plants.plantSpecies",
-    //       populate: "plant",
-    //     });
-
-    //     return user.plants.id(_id);
-    //   }
-    //   throw new AuthenticationError("You must be logged in!");
+    // speciesInfo: async (parent, { id }) => {
+    //   species.findById(id).populate("plant");
     // },
   },
 
@@ -86,6 +62,15 @@ const resolvers = {
       throw new AuthenticationError("You must be logged in!");
     },
   },
+};
+
+exports = async function fetchSpecies(source, input) {
+  const mongodb = context.services.get("mongodb-atlas");
+  const species = mongodb.db("a-new-leaf").collection("species");
+  // Replace them with your ^^^^ Database Name and your ^^^^ Collection Name
+  return await species.find({ plant_id: source._id }).toArray();
+  // Please note that the above source ^^ is responsible for getting
+  // the details from the parent GraphQL Type (User).
 };
 
 module.exports = resolvers;

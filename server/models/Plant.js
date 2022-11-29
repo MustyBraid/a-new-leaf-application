@@ -10,12 +10,12 @@ const plantSchema = new Schema({
   birthDate: {
     type: Date,
   },
-  // plantSpecies: [
-  //   {
-  //     type: Schema.Types.ObjectId,
-  //     ref: "",
-  //   },
-  // ]
+  species: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "species",
+    },
+  ]
 });
 
 const Plant = model("Plant", plantSchema);
