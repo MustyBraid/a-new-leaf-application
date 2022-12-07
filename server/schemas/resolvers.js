@@ -12,14 +12,13 @@ const resolvers = {
       return User.findOne({ _id: userId });
     }, //,
 
-    species: (exports = async function fetchSpecies(source, input) {
-      const mongodb = context.services.get("mongodb-atlas");
-      const species = mongodb.db("a-new-leaf").collection("species");
-      // Replace them with your ^^^^ Database Name and your ^^^^ Collection Name
-      return await species.find({ plant_id: source._id }).toArray();
-      // Please note that the above source ^^ is responsible for getting
-      // the details from the parent GraphQL Type (User).
-    }),
+    plants: async () => {
+      return Plant.find();
+    },
+
+    plant: async (root, { plantId }) => {
+      return Plant.findOne({ _id: plantId });
+    },
   },
 
   Mutation: {
