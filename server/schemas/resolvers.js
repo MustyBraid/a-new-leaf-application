@@ -1,25 +1,44 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Plant } = require("../models");
+const { User, Plant, Species } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
+
+  User: {
+    //TODO: do args get passed to resolvers later in a chain?
+    plants(parent, args) {
+      console.log(args.whichplant);
+      return [{birthDate: args.whichPlant}];
+    }
+  },
+
   Query: {
     users: async () => {
       return User.find();
     },
 
-    user: async (root, { userId }) => {
-      return User.findOne({ _id: userId });
-    }, //,
+    user: async (root, args) => {
+      return User.findOne({ _id: args.userId });
+    },
 
-    species: (exports = async function fetchSpecies(source, input) {
-      const mongodb = context.services.get("mongodb-atlas");
-      const species = mongodb.db("a-new-leaf").collection("species");
-      // Replace them with your ^^^^ Database Name and your ^^^^ Collection Name
-      return await species.find({ plant_id: source._id }).toArray();
-      // Please note that the above source ^^ is responsible for getting
-      // the details from the parent GraphQL Type (User).
-    }),
+    myPlants: async (root, _, context) => {
+      User.findById(context.user.id).then((data) => data.plants);
+      //TODO: How to retrieve a user's plants? Aggregation? Resolver chain?
+    },
+
+    me: async (root, _, context) => {
+      return User.findById(context.user.id);
+    },
+
+    allSpecies: async function fetchSpecies(source, input) {
+      // const mongodb = context.services.get("mongodb-atlas");
+      // const species = mongodb.db("a-new-leaf").collection("species");
+      // // Replace them with your ^^^^ Database Name and your ^^^^ Collection Name
+      // return await species.find({ plant_id: source._id }).toArray();
+      // // Please note that the above source ^^ is responsible for getting
+      // // the details from the parent GraphQL Type (User).
+      return Species.find().limit(20);
+    },
   },
 
   Mutation: {

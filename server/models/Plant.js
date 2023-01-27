@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const Species = require("./Species");
 
 const plantSchema = new Schema({
   nickname: {
@@ -6,16 +7,19 @@ const plantSchema = new Schema({
     required: true,
     minlength: 1,
     maxlength: 280,
+    default: "nickname",
   },
   birthDate: {
     type: Date,
   },
-  species: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "species",
-    },
-  ]
+  icon: {
+    type: String,
+    default: "Plant1.png",
+  },
+  // //if you bring this back remember to update typeDefs.js
+  //species: {
+  //   type: Species
+  // },
 });
 
 const Plant = model("Plant", plantSchema);

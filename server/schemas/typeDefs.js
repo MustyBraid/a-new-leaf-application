@@ -10,17 +10,22 @@ const typeDefs = gql`
   }
 
   type Plant {
-    _id: ID!
-    owner: User
-    birthDate: String
+    birthDate: Int
     nickname: String
-    species: String
+    icon: String
+  }
+
+  type Species {
+    _id: ID! 
+    ${/*This is a placeholder */ ""}
   }
 
   type Query {
     users: [User]!
-    user(userId: ID!): User
-    plant(_id: ID!): Plant
+    user(userId: ID!, whichPlant: Int!): User
+    myPlants: [Plant]!
+    me(whichPlant: Int!): User
+    allSpecies: [Species]! ${/*Another placeholder*/ ""}
   }
 
   type Auth {

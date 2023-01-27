@@ -7,12 +7,23 @@ require("dotenv").config();
 
 const { typeDefs, resolvers } = require("./schemas");
 
+const spoofContext = {
+  user: {
+    id: "63859814e42bc136f21beaa8",
+    name: "Cali Huddleston",
+    email: "calihuddleston@gmail.com",
+    password: "$2b$10$P/zzZRFZ7M26dyIWeQquEuO/mTKcDdLK0jPIi3.NPQ.xGmp2mfvuu",
+  },
+};
+//Use spoofcontext to fake being logged in as Cali when doing testing in ApolloGraphql
+
 const PORT = process.env.PORT || 3001;
 const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: authMiddleware,
+  // context: authMiddleware,
+  context: spoofContext,
 });
 
 app.use(cors());
