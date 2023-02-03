@@ -4,14 +4,6 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
 
-  User: {
-    //TODO: do args get passed to resolvers later in a chain?
-    plants(parent, args) {
-      console.log(args.whichplant);
-      return [{birthDate: args.whichPlant}];
-    }
-  },
-
   Query: {
     users: async () => {
       return User.find();
@@ -22,23 +14,27 @@ const resolvers = {
     },
 
     myPlants: async (root, _, context) => {
-      User.findById(context.user.id).then((data) => data.plants);
-      //TODO: How to retrieve a user's plants? Aggregation? Resolver chain?
+      return User.findById(context.user.id).then((data) => data.plants);
     },
+
 
     me: async (root, _, context) => {
       return User.findById(context.user.id);
     },
 
     allSpecies: async function fetchSpecies(source, input) {
-      // const mongodb = context.services.get("mongodb-atlas");
-      // const species = mongodb.db("a-new-leaf").collection("species");
-      // // Replace them with your ^^^^ Database Name and your ^^^^ Collection Name
-      // return await species.find({ plant_id: source._id }).toArray();
-      // // Please note that the above source ^^ is responsible for getting
-      // // the details from the parent GraphQL Type (User).
       return Species.find().limit(20);
     },
+
+    myPlant: async (root, {whichPlant}, context) => {
+      console.log(`whichPlant: ${whichPlant}`);
+        //find the user
+        //check if the index is out of bounds for their [plants]
+        //if it's within bounds, return the plant at that index
+
+      return User.findById(context.user.id)
+      .then((me) => me.plants.length > whichPlant ? me.plants[whichPlant] : null)
+    }
   },
 
   Mutation: {
@@ -65,7 +61,6 @@ const resolvers = {
       return { token, user };
     },
     addPlant: async (parent, { name, birthDate }, context) => {
-      console.log(context);
       if (context.user) {
         const plant = new Plant({ name, birthDate });
 

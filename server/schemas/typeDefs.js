@@ -10,6 +10,7 @@ const typeDefs = gql`
   }
 
   type Plant {
+    _id: String
     birthDate: Int
     nickname: String
     icon: String
@@ -22,10 +23,11 @@ const typeDefs = gql`
 
   type Query {
     users: [User]!
-    user(userId: ID!, whichPlant: Int!): User
+    user(userId: ID!): User
     myPlants: [Plant]!
-    me(whichPlant: Int!): User
+    me: User
     allSpecies: [Species]! ${/*Another placeholder*/ ""}
+    myPlant(whichPlant: Int!): Plant
   }
 
   type Auth {
@@ -35,7 +37,7 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(name: String!, email: String!, password: String!): Auth
-    addPlant(nickname: String!, birthDate: String!, species: String!): Plant
+    addPlant(nickname: String, birthDate: String, species: String!): Plant
     login(email: String!, password: String!): Auth
     updateUser(name: String, email: String, password: String): Auth
   }
