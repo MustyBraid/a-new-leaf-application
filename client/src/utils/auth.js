@@ -30,6 +30,7 @@ class AuthService {
 
   getToken() {
     // Retrieves the user token from localStorage
+    console.log('Got a token from local storage!')
     return localStorage.getItem("id_token");
   }
 

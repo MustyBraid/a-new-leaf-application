@@ -9,7 +9,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import Footer from "./components/Footer.jsx";
 import Main from "./components/Main.jsx";
-import TemplatePage from "./components/TemplatePage";
+import TemplatePage from "./components/TemplatePage.jsx";
 import Editor from "./components/Editor.jsx";
 import SignUp from "./components/Signup.jsx";
 import Login from "./components/Login.jsx";
@@ -18,12 +18,13 @@ import PageNotFound from "./components/PageNotFound.jsx";
 import UserSettingsPage from "./components/UserSettingsPage.jsx";
 
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: "http://localhost:3001/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
   const token = localStorage.getItem("id_token");
+  console.log(token);
   // return the headers to the context so httpLink can read them
   return {
     headers: {
@@ -33,10 +34,16 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+console.log("authLink: ", authLink);
+console.log("httpLink: ", httpLink);
+
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
+  link: httpLink,
   cache: new InMemoryCache(),
+  
 });
+
+console.log("ApolloClient: ", client);
 
 function App() {
   return (

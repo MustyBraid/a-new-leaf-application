@@ -17,6 +17,12 @@ const resolvers = {
       return User.findById(context.user.id).then((data) => data.plants);
     },
 
+    myPlant: async (root, {whichPlant}, context) => {
+      //find the user, check if the index is out of bounds for their [plants]
+      //if it's within bounds, return the plant at that index; else return null
+      return User.findById(context.user.id)
+      .then((me) => me.plants.length > whichPlant ? me.plants[whichPlant] : null)
+    },
 
     me: async (root, _, context) => {
       return User.findById(context.user.id);
@@ -24,17 +30,8 @@ const resolvers = {
 
     allSpecies: async function fetchSpecies(source, input) {
       return Species.find().limit(20);
-    },
-
-    myPlant: async (root, {whichPlant}, context) => {
-      console.log(`whichPlant: ${whichPlant}`);
-        //find the user
-        //check if the index is out of bounds for their [plants]
-        //if it's within bounds, return the plant at that index
-
-      return User.findById(context.user.id)
-      .then((me) => me.plants.length > whichPlant ? me.plants[whichPlant] : null)
     }
+
   },
 
   Mutation: {
@@ -44,6 +41,15 @@ const resolvers = {
 
       return { token, user };
     },
+    updateUser: async (parent, args, context) => {
+      if (context.user) {
+        return User.findByIdAndUpdate(context.user.id, args, {
+          new: true,
+        });
+      }
+      throw new AuthenticationError("You must be logged in!");
+    },
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -60,6 +66,7 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+
     addPlant: async (parent, { name, birthDate }, context) => {
       if (context.user) {
         const plant = new Plant({ name, birthDate });
@@ -72,14 +79,15 @@ const resolvers = {
       }
       throw new AuthenticationError("You must be logged in!");
     },
-    updateUser: async (parent, args, context) => {
-      if (context.user) {
-        return User.findByIdAndUpdate(context.user.id, args, {
-          new: true,
-        });
-      }
-      throw new AuthenticationError("You must be logged in!");
-    },
+    // updatePlant: async (_, args, context) => {
+    //   if (context.user) {
+    //     const updatedUser = {plants: []}
+    //     return User.findByIdAndUpdate(context.user.id, args, {
+    //       new: true,
+    //     });
+    //   }
+    //   throw new AuthenticationError("You must be logged in!");
+    // },
   },
 };
 
