@@ -16,7 +16,7 @@ function User(props) {
   if (error) return `Error! ${error.message}`;
 
   return (
-    <span>Honk</span>
+    <span>Honk {data.users[0].name}</span>
   );
 }
 
