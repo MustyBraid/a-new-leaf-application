@@ -8,3 +8,11 @@ export const GET_USERS = gql`
         }
     }
 `;
+
+export const GET_ME = gql`
+    query Query {
+        me {
+            email
+        }
+    }
+`;

@@ -11,6 +11,7 @@ const plantSchema = new Schema({
   },
   birthDate: {
     type: Date,
+    default: Date.now()
   },
   icon: {
     type: String,

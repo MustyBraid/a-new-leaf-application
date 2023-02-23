@@ -9,12 +9,38 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
+import { setContext } from '@apollo/client/link/context';
+
+//auth version starts here, ends at sans-auth comment
+
+const httpLink = createHttpLink({
+  uri: "http://localhost:3001/graphql",
+});
+
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem('id_token');
+  console.log("the token is: ", token);
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    }
+  }
+});
 
 const client = new ApolloClient({
-  uri: "http://localhost:3001/graphql",
-  cache: new InMemoryCache(),
-  
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache()
 });
+
+// sans-auth version
+// const client = new ApolloClient({
+//   uri: "http://localhost:3001/graphql",
+//   cache: new InMemoryCache(),
+//   credentials: 'include'
+// });
 
 console.log("apollo client: ", client)
 

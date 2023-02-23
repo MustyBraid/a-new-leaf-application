@@ -3,30 +3,38 @@ const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
 const { authMiddleware } = require("./utils/auth");
 const cors = require("cors");
-require("dotenv").config();
+const dotenv = require("dotenv");
+dotenv.config({ path: '../.env' });
+
 
 const { typeDefs, resolvers } = require("./schemas");
 
-const spoofContext = {
-  user: {
-    id: "63859814e42bc136f21beaa8",
-    name: "Cali Huddleston",
-    email: "calihuddleston@gmail.com",
-    password: "$2b$10$P/zzZRFZ7M26dyIWeQquEuO/mTKcDdLK0jPIi3.NPQ.xGmp2mfvuu",
-  },
-};
-//Use spoofcontext to fake being logged in as Cali when doing testing in ApolloGraphql
+// const spoofContext = {
+//   user: {
+//     id: "63859814e42bc136f21beaa8",
+//     name: "Cali Huddleston",
+//     email: "calihuddleston@gmail.com",
+//     password: "$2b$10$P/zzZRFZ7M26dyIWeQquEuO/mTKcDdLK0jPIi3.NPQ.xGmp2mfvuu",
+//   },
+// };
+//Use spoofcontext to fake being logged in as Cali when doing testing in Apollo sandbox
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  // context: authMiddleware,
-  context: spoofContext,
+  context: authMiddleware,
+  // context: spoofContext,
 });
 
-app.use(cors());
+// enable cors
+var corsOptions = {
+  origin: ['http://localhost:3000',"https://studio.apollographql.com"],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const dbo = require("./config/connection");

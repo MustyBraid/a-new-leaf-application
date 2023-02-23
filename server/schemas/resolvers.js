@@ -25,6 +25,7 @@ const resolvers = {
     },
 
     me: async (root, _, context) => {
+      console.log("Context: ", context.user);
       return User.findById(context.user.id);
     },
 

@@ -1,11 +1,11 @@
 import React from 'react'
 import plusSign from '../assets/plusSign.png';
 import { useQuery } from '@apollo/client';
-import { GET_USERS } from '../utils/queries';
+import { GET_ME } from '../utils/queries';
 
 function User(props) {
   //version with cache policy
-  const { loading, error, data } = useQuery(GET_USERS, {
+  const { loading, error, data } = useQuery(GET_ME, {
     fetchPolicy: 'network-only', //Tells this query not to check the cache
   });
 
@@ -16,7 +16,7 @@ function User(props) {
   if (error) return `Error! ${error.message}`;
 
   return (
-    <span>Honk {data.users[0].name}</span>
+    <span>Honk {data.name}</span>
   );
 }
 
