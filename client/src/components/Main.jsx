@@ -1,7 +1,7 @@
 import React from 'react'
 import plusSign from '../assets/plusSign.png';
 import { useQuery } from '@apollo/client';
-import { GET_ME } from '../utils/queries';
+import { GET_ME, GET_USERS } from '../utils/queries';
 
 function User(props) {
   //version with cache policy
@@ -16,7 +16,7 @@ function User(props) {
   if (error) return `Error! ${error.message}`;
 
   return (
-    <span>Honk {data.name}</span>
+    <span>Honk {JSON.stringify(data)}</span>
   );
 }
 

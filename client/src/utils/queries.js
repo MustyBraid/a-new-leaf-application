@@ -10,8 +10,9 @@ export const GET_USERS = gql`
 `;
 
 export const GET_ME = gql`
-    query Query {
+    query getMe {
         me {
+            name
             email
         }
     }

@@ -25,7 +25,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
     default: "1.0.0",
-  },
+  }
 });
 
 userSchema.pre("save", async function (next) {

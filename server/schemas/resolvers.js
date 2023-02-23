@@ -14,19 +14,19 @@ const resolvers = {
     },
 
     myPlants: async (root, _, context) => {
-      return User.findById(context.user.id).then((data) => data.plants);
+      return User.findById(context.user._id).then((data) => data.plants);
     },
 
     myPlant: async (root, {whichPlant}, context) => {
       //find the user, check if the index is out of bounds for their [plants]
       //if it's within bounds, return the plant at that index; else return null
-      return User.findById(context.user.id)
+      return User.findById(context.user._id)
       .then((me) => me.plants.length > whichPlant ? me.plants[whichPlant] : null)
     },
 
     me: async (root, _, context) => {
-      console.log("Context: ", context.user);
-      return User.findById(context.user.id);
+      console.log("me query ran! Here's context: ", context.user);
+      return User.findById(context.user._id);
     },
 
     allSpecies: async function fetchSpecies(source, input) {
@@ -44,7 +44,7 @@ const resolvers = {
     },
     updateUser: async (parent, args, context) => {
       if (context.user) {
-        return User.findByIdAndUpdate(context.user.id, args, {
+        return User.findByIdAndUpdate(context.user._id, args, {
           new: true,
         });
       }
@@ -72,7 +72,7 @@ const resolvers = {
       if (context.user) {
         const plant = new Plant({ name, birthDate });
 
-        await User.findByIdAndUpdate(context.user.id, {
+        await User.findByIdAndUpdate(context.user._id, {
           $push: { plants: plant },
         });
 

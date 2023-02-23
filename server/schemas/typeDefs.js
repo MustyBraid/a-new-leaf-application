@@ -6,7 +6,7 @@ const typeDefs = gql`
     name: String
     email: String
     password: String
-    version: String
+    schemaVersion: String
     plants: [Plant]
   }
 
