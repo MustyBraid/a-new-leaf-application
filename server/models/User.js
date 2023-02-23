@@ -12,7 +12,8 @@ const userSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    match: [/.+@.+\..+/, "Must match an email address!"],
+    trim: true,
+    match: [/^\S+@\S+\.\S+$/, "Must match an email address!"],
   },
   password: {
     type: String,
@@ -20,6 +21,11 @@ const userSchema = new Schema({
     minLength: 8,
   },
   plants: [Plant.schema],
+  schemaVersion: {
+    type: String,
+    required: true,
+    default: "1.0.0",
+  },
 });
 
 userSchema.pre("save", async function (next) {
