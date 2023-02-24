@@ -14,7 +14,7 @@ const resolvers = {
     },
 
     myPlants: async (root, _, context) => {
-      return User.findById(context.user._id).then((data) => data.plants);
+      return User.findById(context.user._id).plants;
     },
 
     myPlant: async (root, {whichPlant}, context) => {

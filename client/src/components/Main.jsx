@@ -1,7 +1,8 @@
 import React from 'react'
 import plusSign from '../assets/plusSign.png';
 import { useQuery } from '@apollo/client';
-import { GET_ME, GET_USERS } from '../utils/queries';
+import { useMutation } from "@apollo/client";
+import { GET_ME, GET_MY_PLANTS, GET_USERS } from '../utils/queries';
 
 function User(props) {
   //version with cache policy
@@ -19,6 +20,8 @@ function User(props) {
     <span>Honk {JSON.stringify(data)}</span>
   );
 }
+
+
 
 const Main = () => {
   return (

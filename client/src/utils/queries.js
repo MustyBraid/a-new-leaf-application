@@ -9,11 +9,23 @@ export const GET_USERS = gql`
     }
 `;
 
+export const GET_MY_PLANTS = gql`
+    query myPlants {
+        myPlants {
+            birthdate
+        }
+    }
+
+`
+
 export const GET_ME = gql`
     query getMe {
         me {
             name
             email
+            plants {
+                birthDate
+            }
         }
     }
 `;
