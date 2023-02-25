@@ -68,10 +68,11 @@ const resolvers = {
       return { token, user };
     },
 
-    addPlant: async (parent, { name, birthDate }, context) => {
+    addPlant: async (parent, {nickname, birthDate}, context) => {
       if (context.user) {
-        const plant = new Plant({ name, birthDate });
-
+        console.log(`New plant name: ${nickname}`);
+        console.log(`New plant birthdate: ${birthDate}`);
+        const plant = new Plant({ nickname, birthDate });
         await User.findByIdAndUpdate(context.user._id, {
           $push: { plants: plant },
         });

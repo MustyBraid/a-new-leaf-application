@@ -10,7 +10,7 @@ const plantSchema = new Schema({
     default: "nickname",
   },
   birthDate: {
-    type: Date,
+    type: Number,
     default: Date.now()
   },
   icon: {
