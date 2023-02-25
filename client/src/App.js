@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Auth from './utils/auth';
+
 import Main from "./components/Main.jsx";
 import TemplatePage from "./components/TemplatePage.jsx";
 import Editor from "./components/Editor.jsx";
@@ -18,7 +20,7 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route path="/" element={<TemplatePage page={<Login />} />} />
+          <Route path="/" element={<TemplatePage page={Auth.loggedIn() ? <Main /> : <Login />} />} />
           <Route
             path="/signup"
             element={<TemplatePage page={<SignUp />} />}
