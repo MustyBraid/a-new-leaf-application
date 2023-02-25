@@ -24,6 +24,7 @@ const typeDefs = gql`
 
   type Query {
     users: [User]!
+    plants: [Plant]!
     user(userId: ID!): User
     myPlants: [Plant]!
     me: User
