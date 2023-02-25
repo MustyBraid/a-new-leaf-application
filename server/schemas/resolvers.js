@@ -9,7 +9,6 @@ const resolvers = {
       return User.find();
     },
 
-<<<<<<< HEAD
     user: async (root, args) => {
       return User.findOne({ _id: args.userId });
     },
@@ -34,19 +33,6 @@ const resolvers = {
       return Species.find().limit(20);
     }
 
-=======
-    user: async (root, { userId }) => {
-      return User.findOne({ _id: userId });
-    }, //,
-
-    plants: async () => {
-      return Plant.find();
-    },
-
-    plant: async (root, { plantId }) => {
-      return Plant.findOne({ _id: plantId });
-    },
->>>>>>> master
   },
 
   Mutation: {
