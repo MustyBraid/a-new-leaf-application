@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Auth from './utils/auth';
+
 import Main from "./components/Main.jsx";
 import TemplatePage from "./components/TemplatePage.jsx";
 import Editor from "./components/Editor.jsx";
@@ -18,11 +20,13 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route path="/" element={<TemplatePage page={<Login />} />} />
+          {/* Grady changed this route to conditionally serve either main or login, depending on if you're logged in */}
+          <Route path="/" element={<TemplatePage page={Auth.loggedIn() ? <Main /> : <Login />} />} />
           <Route
             path="/signup"
             element={<TemplatePage page={<SignUp />} />}
           />
+          {/* given the above change, the main path can probably be removed */}
           <Route path="/main" element={<TemplatePage page={<Main />} />} />
           <Route
             path="/editplant"

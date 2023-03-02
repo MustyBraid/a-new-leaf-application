@@ -25,6 +25,8 @@ export const GET_ME = gql`
             email
             plants {
                 birthDate
+                nickname
+                icon
             }
         }
     }
