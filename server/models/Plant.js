@@ -17,10 +17,12 @@ const plantSchema = new Schema({
     type: String,
     default: "Plant1.png",
   },
-  // //if you bring this back remember to update typeDefs.js
-  //species: {
-  //   type: Species
-  // },
+  speciesID: {
+    type: Number
+  },
+  speciesName: {
+    type: String
+  }
 });
 
 const Plant = model("Plant", plantSchema);

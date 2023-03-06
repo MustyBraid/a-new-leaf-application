@@ -15,6 +15,8 @@ const typeDefs = gql`
     birthDate: Float
     nickname: String
     icon: String
+    speciesID: Float
+    speciesName: String
   }
 
   type Species {

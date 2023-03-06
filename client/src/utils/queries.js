@@ -13,6 +13,10 @@ export const GET_MY_PLANTS = gql`
     query myPlants {
         myPlants {
             birthdate
+            nickname
+            icon
+            speciesID
+            speciesName
         }
     }
 
@@ -23,11 +27,6 @@ export const GET_ME = gql`
         me {
             name
             email
-            plants {
-                birthDate
-                nickname
-                icon
-            }
         }
     }
 `;
