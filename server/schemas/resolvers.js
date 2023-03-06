@@ -35,6 +35,8 @@ const resolvers = {
       return Species.find().limit(20);
     }
 
+    //TODO: add "species" resolver to retrieve single species by ID
+
   },
 
   Mutation: {
