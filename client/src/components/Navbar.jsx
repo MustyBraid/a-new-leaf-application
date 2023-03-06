@@ -7,7 +7,7 @@ import  Auth from '../utils/auth'
 const NavBar = (props) => {
   return (
     
-<nav className="z-50 fixed w-full h-[80px] flex items-center px-4 bg-green-300 text-gray-300 rounded-b-3xl ">
+<nav className="z-50 sticky w-full h-[80px] flex items-center px-4 bg-green-300 text-gray-300 rounded-b-3xl ">
   <div className="max-w-6xl mx-auto px-4">
     <div className="flex justify-between">
       <div className="flex space-x-7">
