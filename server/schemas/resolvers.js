@@ -13,9 +13,11 @@ const resolvers = {
       return User.findOne({ _id: args.userId });
     },
 
-    myPlants: async (root, _, context) => {
-      return User.findById(context.user._id).plants;
-    },
+    // NOTE: it seems like this is actually fully redundant with the "me" query, and my attempts to use it yielded 400 Bad Request errors
+    // plants: async (root, _, context) => {
+    //   console.log("myPlants query ran! Here's context: ", context.user);
+    //   return User.findById(context.user._id).plants;
+    // },
 
     myPlant: async (root, {whichPlant}, context) => {
       //find the user, check if the index is out of bounds for their [plants]
@@ -25,7 +27,7 @@ const resolvers = {
     },
 
     me: async (root, _, context) => {
-      console.log("me query ran! Here's context: ", context.user);
+      // console.log("me query ran! Here's context: ", context.user);
       return User.findById(context.user._id);
     },
 

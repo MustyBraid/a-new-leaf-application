@@ -11,12 +11,11 @@ export const GET_USERS = gql`
 
 export const GET_MY_PLANTS = gql`
     query myPlants {
-        myPlants {
-            birthdate
-            nickname
-            icon
-            speciesID
-            speciesName
+        me {
+            plants {
+                nickname
+                speciesName
+            }
         }
     }
 

@@ -15,13 +15,21 @@ const typeDefs = gql`
     birthDate: Float
     nickname: String
     icon: String
-    speciesID: Float
+    speciesID: String
     speciesName: String
   }
 
   type Species {
     _id: ID! 
-    ${/*This is a placeholder */ ""}
+    common_names: String
+    family: String
+    family_common_name: String
+    gbif: String
+    plantnet: String
+    powo: String
+    scientific_name: String
+    synonyms: String
+    usda: String
   }
 
   type Query {
@@ -30,7 +38,8 @@ const typeDefs = gql`
     user(userId: ID!): User
     myPlants: [Plant]!
     me: User
-    allSpecies: [Species]! ${/*Another placeholder*/ ""}
+    allSpecies: [Species]! ${/*Another placeholder, but functional*/ ""}
+    species(speciesID: ID!): Species ${/* untested */""}
     myPlant(whichPlant: Int!): Plant
   }
 

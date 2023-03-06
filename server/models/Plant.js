@@ -18,7 +18,7 @@ const plantSchema = new Schema({
     default: "Plant1.png",
   },
   speciesID: {
-    type: Number
+    type: String
   },
   speciesName: {
     type: String
