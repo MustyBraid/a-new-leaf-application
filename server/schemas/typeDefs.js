@@ -39,7 +39,7 @@ const typeDefs = gql`
     myPlants: [Plant]!
     me: User
     allSpecies: [Species]! ${/*Another placeholder, but functional*/ ""}
-    species(speciesID: ID!): Species ${/* untested */""}
+    species(speciesID: ID!): Species
     myPlant(whichPlant: Int!): Plant
   }
 
