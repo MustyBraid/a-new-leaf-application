@@ -35,7 +35,6 @@ const resolvers = {
       return Species.find().limit(20);
     },
 
-    //TODO: test this resolver
     species: async (_, {speciesID}) => {
       return Species.findById(speciesID);
     }
