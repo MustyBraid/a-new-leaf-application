@@ -21,13 +21,19 @@ function App() {
       <Router>
         <Routes>
           {/* Grady changed this route to conditionally serve either main or login, depending on if you're logged in */}
-          <Route path="/" element={<TemplatePage page={Auth.loggedIn() ? <Main /> : <Login />} />} />
+          <Route 
+            path="/" 
+            element={<TemplatePage page={Auth.loggedIn() ? <Main /> : <Login />} />}
+          />
           <Route
             path="/signup"
             element={<TemplatePage page={<SignUp />} />}
           />
           {/* given the above change, the main path can probably be removed */}
-          <Route path="/main" element={<TemplatePage page={<Main />} />} />
+          <Route 
+            path="/main" 
+            element={<TemplatePage page={<Main />} />} 
+          />
           <Route
             path="/editplant"
             element={<TemplatePage page={<Editor />} />}
